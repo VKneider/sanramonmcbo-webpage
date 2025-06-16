@@ -5,8 +5,8 @@ import { Church } from 'lucide-react';
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 gradient-mercedario"></div>
+      {/* Background with solid color */}
+      <div className="absolute inset-0 bg-mercedario-red"></div>
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/20"></div>
