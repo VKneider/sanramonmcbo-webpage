@@ -1,18 +1,20 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Heart, Users, Cross } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const QuienesSomos = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 bg-mercedario-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-mercedario-brown mb-6">
-            ¿Quiénes Somos?
+            {t('aboutUs.title')}
           </h2>
           <p className="text-xl text-mercedario-brown/80 max-w-3xl mx-auto leading-relaxed">
-            Somos una comunidad parroquial católica que vive y transmite el carisma mercedario, 
-            dedicada a la redención y liberación de quienes más lo necesitan.
+            {t('aboutUs.description')}
           </p>
         </div>
 
@@ -27,25 +29,20 @@ const QuienesSomos = () => {
           
           <div className="space-y-6 animate-fade-in">
             <h3 className="font-playfair text-3xl font-semibold text-mercedario-brown">
-              Nuestra Historia
+              {t('aboutUs.historyTitle')}
             </h3>
             <p className="text-mercedario-brown/80 leading-relaxed">
-              La Parroquia San Ramón Nonato fue establecida como una extensión del carisma mercedario, 
-              heredando la tradición de más de 800 años de la Orden de la Merced. San Ramón Nonato, 
-              nuestro santo patrono, es conocido por su dedicación a la liberación de cautivos y su 
-              profunda devoción mariana.
+              {t('aboutUs.historyP1')}
             </p>
             <p className="text-mercedario-brown/80 leading-relaxed">
-              Desde nuestros inicios, hemos sido una comunidad comprometida con los valores evangélicos 
-              de misericordia, liberación y servicio, especialmente hacia aquellos que viven en situación 
-              de vulnerabilidad y cautiverio de cualquier tipo.
+              {t('aboutUs.historyP2')}
             </p>
           </div>
         </div>
 
         <div className="mb-16">
           <h3 className="font-playfair text-3xl font-semibold text-center text-mercedario-brown mb-12">
-            El Carisma Mercedario
+            {t('aboutUs.charismTitle')}
           </h3>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -53,11 +50,10 @@ const QuienesSomos = () => {
               <CardContent className="p-8 text-center">
                 <Cross className="h-12 w-12 text-mercedario-red mx-auto mb-4" />
                 <h4 className="font-playfair text-xl font-semibold mb-4 text-mercedario-brown">
-                  Redención
+                  {t('aboutUs.redemption')}
                 </h4>
                 <p className="text-mercedario-brown/80 leading-relaxed">
-                  Seguimos el ejemplo de Cristo Redentor, trabajando por la liberación 
-                  de toda forma de cautiverio físico, espiritual y social.
+                  {t('aboutUs.redemptionDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -66,11 +62,10 @@ const QuienesSomos = () => {
               <CardContent className="p-8 text-center">
                 <Heart className="h-12 w-12 text-mercedario-red mx-auto mb-4" />
                 <h4 className="font-playfair text-xl font-semibold mb-4 text-mercedario-brown">
-                  Misericordia
+                  {t('aboutUs.mercy')}
                 </h4>
                 <p className="text-mercedario-brown/80 leading-relaxed">
-                  Vivimos la misericordia como madre de todas las virtudes, 
-                  acogiendo y sirviendo con amor especial a los más necesitados.
+                  {t('aboutUs.mercyDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -79,11 +74,10 @@ const QuienesSomos = () => {
               <CardContent className="p-8 text-center">
                 <Users className="h-12 w-12 text-mercedario-red mx-auto mb-4" />
                 <h4 className="font-playfair text-xl font-semibold mb-4 text-mercedario-brown">
-                  Comunidad
+                  {t('aboutUs.community')}
                 </h4>
                 <p className="text-mercedario-brown/80 leading-relaxed">
-                  Construimos una comunidad fraterna donde cada persona 
-                  encuentra su lugar y puede crecer en la fe y el servicio.
+                  {t('aboutUs.communityDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -92,12 +86,10 @@ const QuienesSomos = () => {
 
         <div className="bg-mercedario-white rounded-lg p-8 shadow-md animate-fade-in border border-mercedario-gold/20">
           <h3 className="font-playfair text-3xl font-semibold text-center text-mercedario-brown mb-8">
-            Nuestra Misión
+            {t('aboutUs.missionTitle')}
           </h3>
           <p className="text-lg text-mercedario-brown/80 text-center leading-relaxed max-w-4xl mx-auto">
-            "Ser una comunidad parroquial que vive y anuncia el Evangelio con el carisma mercedario, 
-            promoviendo la liberación integral de la persona humana, especialmente de los más vulnerables, 
-            a través de la oración, la evangelización y el servicio caritativo."
+            "{t('aboutUs.missionText')}"
           </p>
         </div>
       </div>

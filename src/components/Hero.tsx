@@ -1,8 +1,11 @@
 
 import { Button } from '@/components/ui/button';
 import { Church } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with solid color */}
@@ -18,27 +21,26 @@ const Hero = () => {
         </div>
         
         <h1 className="font-playfair text-5xl md:text-7xl font-bold text-mercedario-white mb-6 leading-tight">
-          Parroquia
-          <span className="block text-mercedario-cream">San Ramón Nonato</span>
+          {t('hero.title')}
+          <span className="block text-mercedario-cream">{t('hero.subtitle')}</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-mercedario-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Una comunidad católica guiada por el carisma mercedario, 
-          comprometida con la liberación y el servicio a los más necesitados
+          {t('hero.description')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" className="bg-mercedario-white text-mercedario-red hover:bg-mercedario-cream font-semibold px-8 py-3">
-            Conoce Nuestra Misión
+            {t('hero.missionButton')}
           </Button>
           <Button size="lg" variant="outline" className="border-mercedario-white text-mercedario-white hover:bg-mercedario-white hover:text-mercedario-red font-semibold px-8 py-3">
-            Ver Actividades
+            {t('hero.activitiesButton')}
           </Button>
         </div>
         
         <div className="mt-12 text-mercedario-white/80 text-sm">
-          <p className="italic">"Bendito sea Dios Padre de misericordias"</p>
-          <p className="text-xs mt-1">- Lema de la Orden de la Merced</p>
+          <p className="italic">"{t('hero.motto')}"</p>
+          <p className="text-xs mt-1">- {t('hero.mottoSource')}</p>
         </div>
       </div>
       

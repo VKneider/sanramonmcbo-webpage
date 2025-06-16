@@ -3,16 +3,19 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Church } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageToggle from './LanguageToggle';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   const isActive = (path: string) => location.pathname === path;
 
   const navLinks = [
-    { href: '/', label: 'Inicio' },
-    { href: '/actividades', label: 'Actividades' },
+    { href: '/', label: t('navigation.home') },
+    { href: '/actividades', label: t('navigation.activities') },
   ];
 
   return (
@@ -24,7 +27,7 @@ const Navigation = () => {
             <Church className="h-8 w-8 text-mercedario-red" />
             <div className="flex flex-col">
               <span className="font-playfair font-bold text-lg text-mercedario-brown">San Ramón Nonato</span>
-              <span className="text-xs text-mercedario-gold -mt-1">Parroquia</span>
+              <span className="text-xs text-mercedario-gold -mt-1">{t('navigation.parish')}</span>
             </div>
           </Link>
 
@@ -43,10 +46,12 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
+            <LanguageToggle />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle />
             <Button
               variant="ghost"
               size="sm"

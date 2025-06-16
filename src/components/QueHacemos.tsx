@@ -1,38 +1,41 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpen, Users, HandHeart, Music, Baby, Zap } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const QueHacemos = () => {
+  const { t } = useLanguage();
+
   const ministerios = [
     {
       icon: BookOpen,
-      title: "Catequesis",
-      description: "Formación en la fe para niños, jóvenes y adultos, preparación sacramental y educación religiosa continua."
+      title: t('whatWeDo.catechesis'),
+      description: t('whatWeDo.catechesisDesc')
     },
     {
       icon: Users,
-      title: "Pastoral Juvenil",
-      description: "Acompañamiento integral de los jóvenes en su crecimiento humano y espiritual, con actividades formativas y misioneras."
+      title: t('whatWeDo.youthPastoral'),
+      description: t('whatWeDo.youthPastoralDesc')
     },
     {
       icon: HandHeart,
-      title: "Caritas Parroquial",
-      description: "Servicio caritativo a las familias más necesitadas, distribución de alimentos y apoyo social."
+      title: t('whatWeDo.caritas'),
+      description: t('whatWeDo.caritasDesc')
     },
     {
       icon: Music,
-      title: "Coro Parroquial",
-      description: "Ministerio de música litúrgica que embellece nuestras celebraciones y eleva los corazones a Dios."
+      title: t('whatWeDo.choir'),
+      description: t('whatWeDo.choirDesc')
     },
     {
       icon: Baby,
-      title: "Pastoral Familiar",
-      description: "Acompañamiento a las familias en su crecimiento espiritual, preparación matrimonial y formación parental."
+      title: t('whatWeDo.familyPastoral'),
+      description: t('whatWeDo.familyPastoralDesc')
     },
     {
       icon: Zap,
-      title: "Renovación Carismática",
-      description: "Experiencia de oración carismática, sanación interior y renovación en el Espíritu Santo."
+      title: t('whatWeDo.charismaticRenewal'),
+      description: t('whatWeDo.charismaticRenewalDesc')
     }
   ];
 
@@ -41,11 +44,10 @@ const QueHacemos = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-mercedario-brown mb-6">
-            ¿Qué Hacemos?
+            {t('whatWeDo.title')}
           </h2>
           <p className="text-xl text-mercedario-brown/80 max-w-3xl mx-auto leading-relaxed">
-            Nuestra parroquia es un espacio de encuentro donde desarrollamos diversos ministerios 
-            y grupos de apostolado para el crecimiento espiritual y el servicio comunitario.
+            {t('whatWeDo.description')}
           </p>
         </div>
 
@@ -75,23 +77,23 @@ const QueHacemos = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="font-playfair text-3xl font-semibold text-mercedario-white mb-6">
-                Horarios de Celebraciones
+                {t('whatWeDo.scheduleTitle')}
               </h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
-                  <span className="font-semibold text-mercedario-white">Misas Dominicales:</span>
+                  <span className="font-semibold text-mercedario-white">{t('whatWeDo.sundayMasses')}</span>
                   <span className="text-mercedario-cream">8:00 AM - 10:00 AM - 12:00 PM - 6:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
-                  <span className="font-semibold text-mercedario-white">Misas de Semana:</span>
+                  <span className="font-semibold text-mercedario-white">{t('whatWeDo.weekdayMasses')}</span>
                   <span className="text-mercedario-cream">6:30 AM - 6:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
-                  <span className="font-semibold text-mercedario-white">Adoración al Santísimo:</span>
+                  <span className="font-semibold text-mercedario-white">{t('whatWeDo.adoration')}</span>
                   <span className="text-mercedario-cream">Viernes 7:00 PM - 8:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
-                  <span className="font-semibold text-mercedario-white">Confesiones:</span>
+                  <span className="font-semibold text-mercedario-white">{t('whatWeDo.confessions')}</span>
                   <span className="text-mercedario-cream">Sábados 4:00 PM - 5:30 PM</span>
                 </div>
               </div>
@@ -112,15 +114,14 @@ const QueHacemos = () => {
 
         <div className="text-center mt-16 animate-fade-in">
           <h3 className="font-playfair text-2xl font-semibold text-mercedario-brown mb-4">
-            ¿Te gustaría participar?
+            {t('whatWeDo.participate')}
           </h3>
           <p className="text-mercedario-brown/80 mb-6 max-w-2xl mx-auto">
-            Todos están invitados a formar parte de nuestra comunidad. 
-            Ven y descubre cómo puedes contribuir con tus talentos al servicio de Dios y del prójimo.
+            {t('whatWeDo.participateDesc')}
           </p>
           <div className="bg-mercedario-cream rounded-lg p-4 inline-block border border-mercedario-gold">
             <p className="text-mercedario-red font-semibold">
-              📞 Contacto: (555) 123-4567 | ✉️ info@sanramonnonato.org
+              📞 {t('whatWeDo.contact')} (555) 123-4567 | ✉️ info@sanramonnonato.org
             </p>
           </div>
         </div>
