@@ -3,7 +3,7 @@ import { Church, MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-mercedario-brown text-mercedario-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo y descripción */}
@@ -11,15 +11,15 @@ const Footer = () => {
             <div className="flex items-center space-x-2 mb-4">
               <Church className="h-8 w-8 text-mercedario-gold" />
               <div>
-                <h3 className="font-playfair font-bold text-xl">San Ramón Nonato</h3>
+                <h3 className="font-playfair font-bold text-xl text-mercedario-white">San Ramón Nonato</h3>
                 <p className="text-mercedario-gold text-sm">Parroquia</p>
               </div>
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
+            <p className="text-mercedario-cream mb-4 max-w-md">
               Una comunidad católica guiada por el carisma mercedario, 
               comprometida con la liberación y el servicio a los más necesitados.
             </p>
-            <p className="text-gray-400 text-sm italic">
+            <p className="text-mercedario-cream/80 text-sm italic">
               "Bendito sea Dios Padre de misericordias"
             </p>
           </div>
@@ -32,7 +32,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-mercedario-gold mt-1 flex-shrink-0" />
-                <p className="text-gray-300 text-sm">
+                <p className="text-mercedario-cream text-sm">
                   Calle Principal #123<br />
                   Colonia Centro<br />
                   Ciudad, Estado CP
@@ -40,11 +40,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5 text-mercedario-gold" />
-                <p className="text-gray-300 text-sm">(555) 123-4567</p>
+                <p className="text-mercedario-cream text-sm">(555) 123-4567</p>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-mercedario-gold" />
-                <p className="text-gray-300 text-sm">info@sanramonnonato.org</p>
+                <p className="text-mercedario-cream text-sm">info@sanramonnonato.org</p>
               </div>
             </div>
           </div>
@@ -57,13 +57,13 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-start space-x-2">
                 <Clock className="h-5 w-5 text-mercedario-gold mt-1 flex-shrink-0" />
-                <div className="text-gray-300 text-sm">
+                <div className="text-mercedario-cream text-sm">
                   <p className="font-medium">Misas Dominicales:</p>
                   <p>8:00 AM, 10:00 AM</p>
                   <p>12:00 PM, 6:00 PM</p>
                 </div>
               </div>
-              <div className="text-gray-300 text-sm ml-7">
+              <div className="text-mercedario-cream text-sm ml-7">
                 <p className="font-medium">Misas de Semana:</p>
                 <p>6:30 AM, 6:00 PM</p>
               </div>
@@ -71,11 +71,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-6 text-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-mercedario-gold/20 mt-8 pt-6 text-center">
+          <p className="text-mercedario-cream/80 text-sm">
             © 2024 Parroquia San Ramón Nonato. Todos los derechos reservados.
           </p>
-          <p className="text-gray-500 text-xs mt-2">
+          <p className="text-mercedario-cream/60 text-xs mt-2">
             Orden de la Merced - Carisma Mercedario
           </p>
         </div>

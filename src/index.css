@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 41 100% 45%;
+    --primary: 0 70% 50%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -45,6 +45,17 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Variables de colores mercedarios basadas en el escudo */
+    --mercedario-red: 0 70% 50%;
+    --mercedario-red-dark: 0 70% 40%;
+    --mercedario-red-light: 0 70% 60%;
+    --mercedario-gold: 45 100% 50%;
+    --mercedario-gold-dark: 45 100% 40%;
+    --mercedario-gold-light: 45 100% 60%;
+    --mercedario-white: 0 0% 100%;
+    --mercedario-cream: 45 20% 95%;
+    --mercedario-brown: 30 25% 35%;
   }
 
   .dark {
@@ -54,7 +65,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 41 100% 45%;
+    --primary: 0 70% 50%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -98,13 +109,41 @@
   }
   
   .gradient-mercedario {
-    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #f3f4f6 100%);
+    background: linear-gradient(135deg, hsl(var(--mercedario-red)) 0%, hsl(var(--mercedario-gold)) 50%, hsl(var(--mercedario-cream)) 100%);
+  }
+  
+  .gradient-mercedario-alt {
+    background: linear-gradient(135deg, hsl(var(--mercedario-gold)) 0%, hsl(var(--mercedario-red)) 100%);
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
+    background: linear-gradient(135deg, hsl(var(--mercedario-red)), hsl(var(--mercedario-gold)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-mercedario-red {
+    color: hsl(var(--mercedario-red));
+  }
+
+  .text-mercedario-gold {
+    color: hsl(var(--mercedario-gold));
+  }
+
+  .bg-mercedario-red {
+    background-color: hsl(var(--mercedario-red));
+  }
+
+  .bg-mercedario-gold {
+    background-color: hsl(var(--mercedario-gold));
+  }
+
+  .border-mercedario-red {
+    border-color: hsl(var(--mercedario-red));
+  }
+
+  .border-mercedario-gold {
+    border-color: hsl(var(--mercedario-gold));
   }
 }

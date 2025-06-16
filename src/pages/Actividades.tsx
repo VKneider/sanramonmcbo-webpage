@@ -100,16 +100,16 @@ const Actividades = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-mercedario-cream">
       <Navigation />
       
       {/* Header */}
-      <section className="pt-20 pb-12 bg-gradient-to-r from-mercedario-gold to-mercedario-gold-light">
+      <section className="pt-20 pb-12 gradient-mercedario-alt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-mercedario-white mb-4">
             Nuestras Actividades
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl text-mercedario-cream max-w-3xl mx-auto">
             Participa en nuestras actividades espirituales, convivencias y acciones sociales. 
             Juntos crecemos en fe y servicio siguiendo el carisma mercedario.
           </p>
@@ -117,7 +117,7 @@ const Actividades = () => {
       </section>
 
       {/* Filtros */}
-      <section className="py-8 bg-white border-b">
+      <section className="py-8 bg-mercedario-white border-b border-mercedario-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2 justify-center">
             {categorias.map((categoria) => (
@@ -127,8 +127,8 @@ const Actividades = () => {
                 variant={filtroCategoria === categoria.value ? 'default' : 'outline'}
                 className={`${
                   filtroCategoria === categoria.value 
-                    ? 'bg-mercedario-gold hover:bg-mercedario-gold-dark text-white' 
-                    : 'border-mercedario-gold text-mercedario-gold hover:bg-mercedario-gold hover:text-white'
+                    ? 'bg-mercedario-red hover:bg-mercedario-red-dark text-mercedario-white' 
+                    : 'border-mercedario-red text-mercedario-red hover:bg-mercedario-red hover:text-mercedario-white'
                 }`}
               >
                 {categoria.label}
@@ -145,7 +145,7 @@ const Actividades = () => {
             {actividadesFiltradas.map((actividad, index) => (
               <Card 
                 key={actividad.id} 
-                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in overflow-hidden"
+                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in overflow-hidden bg-mercedario-white border-mercedario-gold/20"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative h-48 overflow-hidden">
@@ -165,34 +165,34 @@ const Actividades = () => {
                   <div className="flex items-start justify-between">
                     <actividad.icono className="h-8 w-8 text-mercedario-gold flex-shrink-0" />
                   </div>
-                  <CardTitle className="font-playfair text-xl text-gray-900">
+                  <CardTitle className="font-playfair text-xl text-mercedario-brown">
                     {actividad.titulo}
                   </CardTitle>
                 </CardHeader>
                 
                 <CardContent className="space-y-4">
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-mercedario-brown/80 leading-relaxed">
                     {actividad.descripcion}
                   </p>
                   
                   <div className="space-y-2">
-                    <div className="flex items-center space-x-2 text-sm text-gray-500">
-                      <Calendar className="h-4 w-4 text-mercedario-gold" />
+                    <div className="flex items-center space-x-2 text-sm text-mercedario-brown/70">
+                      <Calendar className="h-4 w-4 text-mercedario-red" />
                       <span>{actividad.fecha}</span>
                     </div>
                     
-                    <div className="flex items-center space-x-2 text-sm text-gray-500">
-                      <MapPin className="h-4 w-4 text-mercedario-gold" />
+                    <div className="flex items-center space-x-2 text-sm text-mercedario-brown/70">
+                      <MapPin className="h-4 w-4 text-mercedario-red" />
                       <span>{actividad.lugar}</span>
                     </div>
                     
-                    <div className="flex items-center space-x-2 text-sm text-gray-500">
-                      <Users className="h-4 w-4 text-mercedario-gold" />
+                    <div className="flex items-center space-x-2 text-sm text-mercedario-brown/70">
+                      <Users className="h-4 w-4 text-mercedario-red" />
                       <span>{actividad.participantes}</span>
                     </div>
                   </div>
                   
-                  <Button className="w-full bg-mercedario-gold hover:bg-mercedario-gold-dark text-white">
+                  <Button className="w-full bg-mercedario-red hover:bg-mercedario-red-dark text-mercedario-white">
                     Más Información
                   </Button>
                 </CardContent>
@@ -202,7 +202,7 @@ const Actividades = () => {
           
           {actividadesFiltradas.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">
+              <p className="text-mercedario-brown/70 text-lg">
                 No hay actividades disponibles para esta categoría.
               </p>
             </div>
@@ -211,27 +211,27 @@ const Actividades = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-mercedario-gold/10">
+      <section className="py-16 bg-mercedario-red/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-playfair text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="font-playfair text-3xl font-bold text-mercedario-brown mb-6">
             ¿Quieres participar?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg text-mercedario-brown/80 mb-8">
             Todas nuestras actividades están abiertas para la comunidad. 
             Contáctanos para más información sobre inscripciones y requisitos.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <div className="flex items-center space-x-2 text-mercedario-gold">
+            <div className="flex items-center space-x-2 text-mercedario-red">
               <Calendar className="h-5 w-5" />
               <span className="font-semibold">Inscripciones abiertas</span>
             </div>
-            <div className="flex items-center space-x-2 text-mercedario-gold">
+            <div className="flex items-center space-x-2 text-mercedario-red">
               <Clock className="h-5 w-5" />
               <span className="font-semibold">Atención: Lun-Vie 9AM-6PM</span>
             </div>
           </div>
-          <div className="mt-8 bg-white rounded-lg p-6 shadow-md">
-            <p className="text-gray-700">
+          <div className="mt-8 bg-mercedario-white rounded-lg p-6 shadow-md border border-mercedario-gold/20">
+            <p className="text-mercedario-brown">
               <strong>Contacto:</strong> (555) 123-4567 | 
               <strong> Email:</strong> actividades@sanramonnonato.org
             </p>

@@ -64,11 +64,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				mercedario: {
-					gold: '#f59e0b',
-					'gold-light': '#fbbf24',
-					'gold-dark': '#d97706',
-					blue: '#3b82f6',
-					'blue-light': '#60a5fa'
+					red: 'hsl(var(--mercedario-red))',
+					'red-dark': 'hsl(var(--mercedario-red-dark))',
+					'red-light': 'hsl(var(--mercedario-red-light))',
+					gold: 'hsl(var(--mercedario-gold))',
+					'gold-dark': 'hsl(var(--mercedario-gold-dark))',
+					'gold-light': 'hsl(var(--mercedario-gold-light))',
+					white: 'hsl(var(--mercedario-white))',
+					cream: 'hsl(var(--mercedario-cream))',
+					brown: 'hsl(var(--mercedario-brown))'
 				}
 			},
 			fontFamily: {
