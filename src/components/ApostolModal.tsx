@@ -24,6 +24,15 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+        {apostolado.image && (
+          <div className="w-full h-64 overflow-hidden rounded-lg mb-4">
+            <img 
+              src={apostolado.image} 
+              alt={apostolado.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
         <DialogHeader>
           <DialogTitle className="text-2xl text-red-800 mb-2">
             {apostolado.name}

@@ -8,6 +8,7 @@ export interface Apostolado {
   id: string;
   name: string;
   description: string;
+  image?: string;
   ageRange?: string;
   schedule?: string;
   location?: string;
@@ -25,7 +26,16 @@ const ApostolCard: React.FC<ApostolCardProps> = ({ apostolado, onMoreInfo }) => 
   const { t } = useLanguage();
 
   return (
-    <Card className="h-full flex flex-col hover:shadow-md transition-shadow">
+    <Card className="h-full flex flex-col hover:shadow-md transition-shadow overflow-hidden">
+      {apostolado.image && (
+        <div className="w-full h-48 overflow-hidden">
+          <img 
+            src={apostolado.image} 
+            alt={apostolado.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
       <CardHeader>
         <CardTitle className="text-lg text-red-800">{apostolado.name}</CardTitle>
         <CardDescription className="text-gray-600">
