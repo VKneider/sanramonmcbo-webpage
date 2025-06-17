@@ -1,3 +1,4 @@
+
 export type Language = 'es' | 'en';
 
 export const translations = {
@@ -229,5 +230,4 @@ export const translations = {
   }
 };
 
-export type Language = 'es' | 'en';
 export type TranslationKey = keyof typeof translations.es;
