@@ -37,7 +37,7 @@ const ApostolCard: React.FC<ApostolCardProps> = ({ apostolado, onMoreInfo }) => 
         </div>
       )}
       <CardHeader>
-        <CardTitle className="text-lg text-red-800">{apostolado.name}</CardTitle>
+        <CardTitle className="text-lg text-red-600">{apostolado.name}</CardTitle>
         <CardDescription className="text-gray-600">
           {apostolado.description}
         </CardDescription>

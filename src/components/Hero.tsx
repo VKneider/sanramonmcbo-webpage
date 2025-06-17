@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with solid color */}
-      <div className="absolute inset-0 bg-mercedario-red"></div>
+      <div className="absolute inset-0 bg-red-600"></div>
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/20"></div>
@@ -17,28 +17,28 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
         <div className="mb-8">
-          <Church className="h-16 w-16 text-mercedario-white mx-auto mb-4" />
+          <Church className="h-16 w-16 text-white mx-auto mb-4" />
         </div>
         
-        <h1 className="font-playfair text-5xl md:text-7xl font-bold text-mercedario-white mb-6 leading-tight">
+        <h1 className="font-playfair text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
           {t('hero.title')}
-          <span className="block text-mercedario-cream">{t('hero.subtitle')}</span>
+          <span className="block text-yellow-100">{t('hero.subtitle')}</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-mercedario-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
           {t('hero.description')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-mercedario-white text-mercedario-red hover:bg-mercedario-cream font-semibold px-8 py-3">
+          <Button size="lg" className="bg-white text-red-600 hover:bg-yellow-50 font-semibold px-8 py-3">
             {t('hero.missionButton')}
           </Button>
-          <Button size="lg" variant="outline" className="border-mercedario-white text-mercedario-white hover:bg-mercedario-white hover:text-mercedario-red font-semibold px-8 py-3">
+          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 font-semibold px-8 py-3">
             {t('hero.activitiesButton')}
           </Button>
         </div>
         
-        <div className="mt-12 text-mercedario-white/80 text-sm">
+        <div className="mt-12 text-white/80 text-sm">
           <p className="italic">"{t('hero.motto')}"</p>
           <p className="text-xs mt-1">- {t('hero.mottoSource')}</p>
         </div>
@@ -46,8 +46,8 @@ const Hero = () => {
       
       {/* Decorative elements */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-mercedario-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-mercedario-white/50 rounded-full mt-2 animate-pulse"></div>
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

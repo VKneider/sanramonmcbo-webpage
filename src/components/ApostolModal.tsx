@@ -34,7 +34,7 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
           </div>
         )}
         <DialogHeader>
-          <DialogTitle className="text-2xl text-red-800 mb-2">
+          <DialogTitle className="text-2xl text-red-600 mb-2">
             {apostolado.name}
           </DialogTitle>
           <DialogDescription className="text-gray-600 text-base">
@@ -45,28 +45,28 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
         <div className="space-y-4 mt-4">
           {apostolado.ageRange && (
             <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.ageRange')}</h4>
+              <h4 className="font-semibold text-red-600 mb-1">{t('apostolados.ageRange')}</h4>
               <p className="text-gray-700">{apostolado.ageRange}</p>
             </div>
           )}
           
           {apostolado.schedule && (
             <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.schedule')}</h4>
+              <h4 className="font-semibold text-red-600 mb-1">{t('apostolados.schedule')}</h4>
               <p className="text-gray-700">{apostolado.schedule}</p>
             </div>
           )}
           
           {apostolado.location && (
             <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.location')}</h4>
+              <h4 className="font-semibold text-red-600 mb-1">{t('apostolados.location')}</h4>
               <p className="text-gray-700">{apostolado.location}</p>
             </div>
           )}
           
           {apostolado.activities && apostolado.activities.length > 0 && (
             <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.activities')}</h4>
+              <h4 className="font-semibold text-red-600 mb-1">{t('apostolados.activities')}</h4>
               <ul className="list-disc list-inside text-gray-700 space-y-1">
                 {apostolado.activities.map((activity, index) => (
                   <li key={index}>{activity}</li>
@@ -77,14 +77,14 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
           
           {apostolado.requirements && (
             <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.requirements')}</h4>
+              <h4 className="font-semibold text-red-600 mb-1">{t('apostolados.requirements')}</h4>
               <p className="text-gray-700">{apostolado.requirements}</p>
             </div>
           )}
           
           {apostolado.contact && (
             <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.contact')}</h4>
+              <h4 className="font-semibold text-red-600 mb-1">{t('apostolados.contact')}</h4>
               <p className="text-gray-700">{apostolado.contact}</p>
             </div>
           )}
