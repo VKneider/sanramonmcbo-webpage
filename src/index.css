@@ -46,16 +46,16 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Variables de colores mercedarios basadas en el escudo */
+    /* Variables de colores mercedarios actualizados */
     --mercedario-red: 0 70% 50%;
     --mercedario-red-dark: 0 70% 40%;
     --mercedario-red-light: 0 70% 60%;
-    --mercedario-gold: 45 100% 50%;
-    --mercedario-gold-dark: 45 100% 40%;
-    --mercedario-gold-light: 45 100% 60%;
+    --mercedario-gold: 45 85% 55%;
+    --mercedario-gold-dark: 45 85% 45%;
+    --mercedario-gold-light: 45 85% 65%;
     --mercedario-white: 0 0% 100%;
-    --mercedario-cream: 45 20% 95%;
-    --mercedario-brown: 30 25% 35%;
+    --mercedario-cream: 42 15% 94%;
+    --mercedario-dark: 30 15% 25%;
   }
 
   .dark {
@@ -131,12 +131,24 @@
     color: hsl(var(--mercedario-gold));
   }
 
+  .text-mercedario-dark {
+    color: hsl(var(--mercedario-dark));
+  }
+
   .bg-mercedario-red {
     background-color: hsl(var(--mercedario-red));
   }
 
   .bg-mercedario-gold {
     background-color: hsl(var(--mercedario-gold));
+  }
+
+  .bg-mercedario-cream {
+    background-color: hsl(var(--mercedario-cream));
+  }
+
+  .bg-mercedario-dark {
+    background-color: hsl(var(--mercedario-dark));
   }
 
   .border-mercedario-red {
