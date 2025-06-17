@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import QuienesSomos from '@/components/QuienesSomos';
 import QueHacemos from '@/components/QueHacemos';
+import Apostolados from '@/components/Apostolados';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -12,6 +13,7 @@ const Index = () => {
       <Hero />
       <QuienesSomos />
       <QueHacemos />
+      <Apostolados />
       <Footer />
     </div>
   );
