@@ -1,10 +1,12 @@
+export type Language = 'es' | 'en';
 
 export const translations = {
   es: {
     navigation: {
-      home: "Inicio",
-      activities: "Actividades",
-      parish: "Parroquia"
+      home: 'Inicio',
+      activities: 'Actividades',
+      apostolates: 'Apostolados',
+      parish: 'Parroquia'
     },
     hero: {
       title: "Parroquia",
@@ -114,9 +116,10 @@ export const translations = {
   },
   en: {
     navigation: {
-      home: "Home",
-      activities: "Activities",
-      parish: "Parish"
+      home: 'Home',
+      activities: 'Activities',
+      apostolates: 'Apostolates',
+      parish: 'Parish'
     },
     hero: {
       title: "Parish",
@@ -226,5 +229,5 @@ export const translations = {
   }
 };
 
-export type Language = keyof typeof translations;
+export type Language = 'es' | 'en';
 export type TranslationKey = keyof typeof translations.es;
