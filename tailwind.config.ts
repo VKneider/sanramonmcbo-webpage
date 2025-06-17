@@ -64,30 +64,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				mercedario: {
-					// Color principal rojo mercedario
-					red: {
-						50: '254 242 242',   // muy claro
-						100: '254 226 226',  // claro
-						500: '220 38 38',    // principal (red-600 de Tailwind)
-						600: '185 28 28',    // oscuro
-						700: '153 27 27',    // muy oscuro
-					},
-					// Color dorado/amarillo
-					gold: {
-						100: '254 249 195',  // muy claro
-						300: '253 224 71',   // claro
-						500: '234 179 8',    // principal (yellow-500 de Tailwind)
-						600: '202 138 4',    // oscuro
-					},
-					// Neutrales
-					white: '255 255 255',
-					cream: '254 252 232',    // yellow-50 de Tailwind
-					gray: {
-						100: '243 244 246',  // gray-100
-						600: '75 85 99',     // gray-600
-						700: '55 65 81',     // gray-700
-						800: '31 41 55',     // gray-800
-					}
+					red: 'hsl(var(--mercedario-red))',
+					'red-dark': 'hsl(var(--mercedario-red-dark))',
+					'red-light': 'hsl(var(--mercedario-red-light))',
+					gold: 'hsl(var(--mercedario-gold))',
+					'gold-dark': 'hsl(var(--mercedario-gold-dark))',
+					'gold-light': 'hsl(var(--mercedario-gold-light))',
+					white: 'hsl(var(--mercedario-white))',
+					cream: 'hsl(var(--mercedario-cream))',
+					brown: 'hsl(var(--mercedario-brown))'
 				}
 			},
 			fontFamily: {
