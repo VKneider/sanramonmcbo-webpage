@@ -72,7 +72,7 @@ export default {
 					'gold-light': 'hsl(var(--mercedario-gold-light))',
 					white: 'hsl(var(--mercedario-white))',
 					cream: 'hsl(var(--mercedario-cream))',
-					dark: 'hsl(var(--mercedario-dark))'
+					brown: 'hsl(var(--mercedario-brown))'
 				}
 			},
 			fontFamily: {
