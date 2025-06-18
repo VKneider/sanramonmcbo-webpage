@@ -17,6 +17,7 @@ const Navigation = () => {
     { href: '/', label: t('navigation.home') },
     { href: '/actividades', label: t('navigation.activities') },
     { href: '/apostolados', label: t('navigation.apostolates') },
+    { href: '/galeria', label: 'Galería' },
   ];
 
   return (
