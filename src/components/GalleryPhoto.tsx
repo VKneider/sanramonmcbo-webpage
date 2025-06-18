@@ -15,7 +15,7 @@ const GalleryPhoto = ({ src, alt, caption, isVertical = false, onClick }: Galler
       <HoverCardTrigger asChild>
         <div 
           className={`group cursor-pointer overflow-hidden rounded-lg shadow-md transition-transform duration-200 hover:scale-105 ${
-            isVertical ? 'row-span-2' : ''
+            isVertical ? 'row-span-2 h-[520px]' : 'h-[250px]'
           }`}
           onClick={onClick}
         >

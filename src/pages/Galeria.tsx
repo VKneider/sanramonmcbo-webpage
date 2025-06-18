@@ -17,50 +17,50 @@ const Galeria = () => {
   const photos = [
     {
       src: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-      alt: "Actividad parroquial",
-      caption: "Misa dominical",
+      alt: "Misa dominical",
+      caption: "Celebración de la eucaristía dominical en nuestra parroquia",
       isVertical: false
     },
     {
       src: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb",
-      alt: "Oración nocturna",
-      caption: "Adoración nocturna",
+      alt: "Adoración nocturna",
+      caption: "Momento de oración y adoración al Santísimo Sacramento",
       isVertical: true
     },
     {
       src: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
-      alt: "Bautismo",
-      caption: "Celebración de bautismo",
+      alt: "Celebración de bautismo",
+      caption: "Sacramento del bautismo para nuevos miembros de la comunidad",
       isVertical: false
     },
     {
       src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843",
-      alt: "Retiro espiritual",
-      caption: "Retiro en la naturaleza",
+      alt: "Retiro en la naturaleza",
+      caption: "Retiro espiritual en contacto con la creación de Dios",
       isVertical: false
     },
     {
       src: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
-      alt: "Procesión",
-      caption: "Procesión de San Ramón",
+      alt: "Procesión de San Ramón",
+      caption: "Procesión en honor a nuestro santo patrono San Ramón Nonato",
       isVertical: true
     },
     {
       src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-      alt: "Encuentro juvenil",
-      caption: "Jóvenes en oración",
+      alt: "Jóvenes en oración",
+      caption: "Encuentro de oración con los jóvenes de la parroquia",
       isVertical: false
     },
     {
       src: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
-      alt: "Coro parroquial",
-      caption: "Ensayo del coro",
+      alt: "Ensayo del coro",
+      caption: "Preparación musical para las celebraciones litúrgicas",
       isVertical: false
     },
     {
       src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
-      alt: "Catequesis",
-      caption: "Clases de catequesis",
+      alt: "Clases de catequesis",
+      caption: "Formación religiosa para niños y jóvenes de la comunidad",
       isVertical: true
     }
   ];
@@ -90,7 +90,7 @@ const Galeria = () => {
           </div>
 
           {/* Gallery Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[250px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {photos.map((photo, index) => (
               <GalleryPhoto
                 key={index}

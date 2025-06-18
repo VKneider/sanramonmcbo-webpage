@@ -25,7 +25,8 @@ const ImageModal = ({ isOpen, onClose, src, alt, caption }: ImageModalProps) => 
             className="w-full h-auto max-h-[80vh] object-contain"
           />
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-            <p className="text-white text-lg font-medium">{caption}</p>
+            <h3 className="text-white text-xl font-semibold mb-2">{alt}</h3>
+            <p className="text-white/90 text-base">{caption}</p>
           </div>
         </div>
       </DialogContent>
