@@ -8,11 +8,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const Galeria = () => {
   const { t } = useLanguage();
-  const [selectedImage, setSelectedImage] = useState<{
-    src: string;
-    alt: string;
-    caption: string;
-  } | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const photos = [
     {
@@ -107,13 +103,27 @@ const Galeria = () => {
     }
   ];
 
-  const handleImageClick = (photo: { src: string; alt: string; caption: string }) => {
-    setSelectedImage(photo);
+  const handleImageClick = (index: number) => {
+    setSelectedImageIndex(index);
   };
 
   const handleCloseModal = () => {
-    setSelectedImage(null);
+    setSelectedImageIndex(null);
   };
+
+  const handlePreviousImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    }
+  };
+
+  const handleNextImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex < photos.length - 1) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  };
+
+  const selectedPhoto = selectedImageIndex !== null ? photos[selectedImageIndex] : null;
 
   return (
     <div className="min-h-screen bg-mercedario-cream">
@@ -140,7 +150,7 @@ const Galeria = () => {
                 alt={photo.alt}
                 caption={photo.caption}
                 isVertical={photo.isVertical}
-                onClick={() => handleImageClick(photo)}
+                onClick={() => handleImageClick(index)}
               />
             ))}
           </div>
@@ -149,13 +159,17 @@ const Galeria = () => {
 
       <Footer />
 
-      {selectedImage && (
+      {selectedPhoto && (
         <ImageModal
-          isOpen={!!selectedImage}
+          isOpen={selectedImageIndex !== null}
           onClose={handleCloseModal}
-          src={selectedImage.src}
-          alt={selectedImage.alt}
-          caption={selectedImage.caption}
+          src={selectedPhoto.src}
+          alt={selectedPhoto.alt}
+          caption={selectedPhoto.caption}
+          onPrevious={handlePreviousImage}
+          onNext={handleNextImage}
+          hasPrevious={selectedImageIndex !== null && selectedImageIndex > 0}
+          hasNext={selectedImageIndex !== null && selectedImageIndex < photos.length - 1}
         />
       )}
     </div>
