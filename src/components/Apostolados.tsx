@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ApostolCard, { Apostolado } from './ApostolCard';
@@ -93,7 +94,7 @@ const Apostolados: React.FC = () => {
   return (
     <div className="min-h-screen bg-mercedario-cream">
       {/* Header */}
-      <section className="pt-20 pb-12 bg-mercedario-red">
+      <section className="min-h-[40vh] bg-mercedario-red flex items-center justify-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold text-mercedario-white mb-4">
             {t('apostolados.title')}
