@@ -29,12 +29,9 @@ const Hero = () => {
           {t('hero.description')}
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <Button size="lg" className="bg-mercedario-white text-mercedario-red hover:bg-mercedario-cream font-semibold px-8 py-3">
             {t('hero.missionButton')}
-          </Button>
-          <Button size="lg" variant="outline" className="border-mercedario-white text-mercedario-white hover:bg-mercedario-white hover:text-mercedario-red font-semibold px-8 py-3">
-            {t('hero.activitiesButton')}
           </Button>
         </div>
         

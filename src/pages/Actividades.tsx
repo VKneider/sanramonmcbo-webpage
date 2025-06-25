@@ -6,9 +6,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, MapPin, Users, Clock, Heart, Mountain, HandHeart } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Actividades = () => {
   const [filtroCategoria, setFiltroCategoria] = useState('todas');
+  const { t } = useLanguage();
 
   const actividades = [
     {
@@ -80,10 +82,10 @@ const Actividades = () => {
   ];
 
   const categorias = [
-    { value: 'todas', label: 'Todas las Actividades' },
-    { value: 'retiros', label: 'Retiros Espirituales' },
-    { value: 'convivencias', label: 'Convivencias' },
-    { value: 'sociales', label: 'Acción Social' }
+    { value: 'todas', label: t('activities.allActivities') },
+    { value: 'retiros', label: t('activities.retreats') },
+    { value: 'convivencias', label: t('activities.gatherings') },
+    { value: 'sociales', label: t('activities.socialAction') }
   ];
 
   const actividadesFiltradas = filtroCategoria === 'todas' 
@@ -104,14 +106,13 @@ const Actividades = () => {
       <Navigation />
       
       {/* Header */}
-      <section className="pt-20 pb-12 gradient-mercedario-alt">
+      <section className="pt-20 pb-12 bg-mercedario-red">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold text-mercedario-white mb-4">
-            Nuestras Actividades
+            {t('activities.title')}
           </h1>
           <p className="text-xl text-mercedario-cream max-w-3xl mx-auto">
-            Participa en nuestras actividades espirituales, convivencias y acciones sociales. 
-            Juntos crecemos en fe y servicio siguiendo el carisma mercedario.
+            {t('activities.description')}
           </p>
         </div>
       </section>
@@ -193,7 +194,7 @@ const Actividades = () => {
                   </div>
                   
                   <Button className="w-full bg-mercedario-red hover:bg-mercedario-red-dark text-mercedario-white">
-                    Más Información
+                    {t('activities.moreInfo')}
                   </Button>
                 </CardContent>
               </Card>
@@ -203,7 +204,7 @@ const Actividades = () => {
           {actividadesFiltradas.length === 0 && (
             <div className="text-center py-12">
               <p className="text-mercedario-brown/70 text-lg">
-                No hay actividades disponibles para esta categoría.
+                {t('activities.noActivities')}
               </p>
             </div>
           )}
@@ -214,25 +215,24 @@ const Actividades = () => {
       <section className="py-16 bg-mercedario-red/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-playfair text-3xl font-bold text-mercedario-brown mb-6">
-            ¿Quieres participar?
+            {t('activities.participate')}
           </h2>
           <p className="text-lg text-mercedario-brown/80 mb-8">
-            Todas nuestras actividades están abiertas para la comunidad. 
-            Contáctanos para más información sobre inscripciones y requisitos.
+            {t('activities.participateDesc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="flex items-center space-x-2 text-mercedario-red">
               <Calendar className="h-5 w-5" />
-              <span className="font-semibold">Inscripciones abiertas</span>
+              <span className="font-semibold">{t('activities.openRegistration')}</span>
             </div>
             <div className="flex items-center space-x-2 text-mercedario-red">
               <Clock className="h-5 w-5" />
-              <span className="font-semibold">Atención: Lun-Vie 9AM-6PM</span>
+              <span className="font-semibold">{t('activities.schedule')}</span>
             </div>
           </div>
           <div className="mt-8 bg-mercedario-white rounded-lg p-6 shadow-md border border-mercedario-gold/20">
             <p className="text-mercedario-brown">
-              <strong>Contacto:</strong> (555) 123-4567 | 
+              <strong>{t('activities.contactInfo')}</strong> (555) 123-4567 | 
               <strong> Email:</strong> actividades@sanramonnonato.org
             </p>
           </div>
