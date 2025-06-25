@@ -148,7 +148,10 @@ export const translations = {
       openRegistration: "Inscripciones abiertas",
       schedule: "Atención: Lun-Vie 9AM-6PM",
       contactInfo: "Contacto:",
-      noActivities: "No hay actividades disponibles para esta categoría."
+      noActivities: "No hay actividades disponibles para esta categoría.",
+      location: "Ubicación",
+      locationDesc: "Visítanos en nuestra parroquia y participa en nuestras actividades comunitarias.",
+      directions: "Cómo llegar"
     }
   },
   en: {
@@ -298,7 +301,10 @@ export const translations = {
       openRegistration: "Open registration",
       schedule: "Hours: Mon-Fri 9AM-6PM",
       contactInfo: "Contact:",
-      noActivities: "No activities available for this category."
+      noActivities: "No activities available for this category.",
+      location: "Location",
+      locationDesc: "Visit us at our parish and participate in our community activities.",
+      directions: "Directions"
     }
   }
 };
