@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ApostolCard, { Apostolado } from './ApostolCard';
@@ -92,51 +91,56 @@ const Apostolados: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-red-800 mb-4">
+    <div className="min-h-screen bg-mercedario-cream">
+      {/* Header */}
+      <section className="pt-20 pb-12 bg-mercedario-red">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-mercedario-white mb-4">
             {t('apostolados.title')}
-          </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          </h1>
+          <p className="text-xl text-mercedario-cream max-w-3xl mx-auto">
             {t('apostolados.description')}
           </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {apostolados.map((apostolado) => (
-            <ApostolCard
-              key={apostolado.id}
-              apostolado={apostolado}
-              onMoreInfo={handleMoreInfo}
-            />
-          ))}
-        </div>
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {apostolados.map((apostolado) => (
+              <ApostolCard
+                key={apostolado.id}
+                apostolado={apostolado}
+                onMoreInfo={handleMoreInfo}
+              />
+            ))}
+          </div>
 
-        <div className="text-center mt-12">
-          <div className="bg-white rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-red-800 mb-4">
-              {t('apostolados.joinUs')}
-            </h3>
-            <p className="text-gray-700 mb-6">
-              {t('apostolados.joinUsDescription')}
-            </p>
-            <div className="space-y-2 text-sm text-gray-600">
-              <p><strong>{t('apostolados.contactInfo')}:</strong></p>
-              <p>📧 info@sanramonnnonato.org</p>
-              <p>📞 (555) 123-4567</p>
-              <p>🕐 {t('apostolados.officeHours')}</p>
+          <div className="text-center mt-12">
+            <div className="bg-white rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-red-800 mb-4">
+                {t('apostolados.joinUs')}
+              </h3>
+              <p className="text-gray-700 mb-6">
+                {t('apostolados.joinUsDescription')}
+              </p>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p><strong>{t('apostolados.contactInfo')}:</strong></p>
+                <p>📧 info@sanramonnnonato.org</p>
+                <p>📞 (555) 123-4567</p>
+                <p>🕐 {t('apostolados.officeHours')}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <ApostolModal
         apostolado={selectedApostolado}
         isOpen={isModalOpen}
         onClose={handleCloseModal}
       />
-    </section>
+    </div>
   );
 };
 
