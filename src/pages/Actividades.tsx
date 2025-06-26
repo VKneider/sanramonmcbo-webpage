@@ -6,7 +6,6 @@ import ActivitiesHeader from '@/components/activities/ActivitiesHeader';
 import ActivitiesFilter from '@/components/activities/ActivitiesFilter';
 import ActivitiesList from '@/components/activities/ActivitiesList';
 import ActivitiesCallToAction from '@/components/activities/ActivitiesCallToAction';
-import ActivitiesLocation from '@/components/activities/ActivitiesLocation';
 
 const Actividades = () => {
   const [filtroCategoria, setFiltroCategoria] = useState('todas');
@@ -20,7 +19,6 @@ const Actividades = () => {
         setFiltroCategoria={setFiltroCategoria} 
       />
       <ActivitiesList filtroCategoria={filtroCategoria} />
-      <ActivitiesLocation />
       <ActivitiesCallToAction />
       <Footer />
     </div>
