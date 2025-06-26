@@ -41,7 +41,7 @@ const Navigation = () => {
                 to={link.href}
                 className={`font-medium transition-colors duration-200 ${
                   isActive(link.href)
-                    ? 'text-mercedario-gold border-b-2 border-mercedario-gold'
+                    ? 'text-mercedario-gold'
                     : 'text-mercedario-white hover:text-mercedario-gold'
                 }`}
               >
