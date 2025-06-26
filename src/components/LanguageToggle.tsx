@@ -15,7 +15,7 @@ const LanguageToggle = () => {
       variant="ghost"
       size="sm"
       onClick={toggleLanguage}
-      className="text-mercedario-brown hover:text-mercedario-red flex items-center space-x-1"
+      className="text-mercedario-white hover:text-mercedario-gold hover:bg-mercedario-gold/10 flex items-center space-x-1"
     >
       <Languages className="h-4 w-4" />
       <span className="font-medium">{language === 'es' ? 'EN' : 'ES'}</span>
