@@ -21,7 +21,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-mercedario-brown/95 backdrop-blur-sm border-b border-mercedario-gold shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-mercedario-brown/95 backdrop-blur-sm shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -67,7 +67,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-mercedario-gold bg-mercedario-brown/98">
+          <div className="md:hidden bg-mercedario-brown/98">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
                 <Link
