@@ -39,10 +39,10 @@ const Navigation = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`font-medium transition-colors duration-200 ${
+                className={`transition-colors duration-200 ${
                   isActive(link.href)
-                    ? 'text-mercedario-gold'
-                    : 'text-mercedario-white hover:text-mercedario-gold'
+                    ? 'text-mercedario-gold font-bold'
+                    : 'text-mercedario-white hover:text-mercedario-gold font-medium'
                 }`}
               >
                 {link.label}
@@ -74,10 +74,10 @@ const Navigation = () => {
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  className={`block px-3 py-2 rounded-md text-base transition-colors duration-200 ${
                     isActive(link.href)
-                      ? 'text-mercedario-gold bg-mercedario-gold/20'
-                      : 'text-mercedario-white hover:text-mercedario-gold hover:bg-mercedario-gold/10'
+                      ? 'text-mercedario-gold font-bold bg-mercedario-gold/10'
+                      : 'text-mercedario-white hover:text-mercedario-gold hover:bg-mercedario-gold/10 font-medium'
                   }`}
                 >
                   {link.label}
