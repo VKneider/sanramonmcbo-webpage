@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -16,6 +15,7 @@ interface ActivityCardProps {
     participantes: string;
     icono: React.ComponentType<{ className?: string }>;
     imagen: string;
+    link?: string;
   };
   index: number;
   getCategoriaColor: (categoria: string) => string;
@@ -24,6 +24,12 @@ interface ActivityCardProps {
 
 const ActivityCard = ({ actividad, index, getCategoriaColor, categorias }: ActivityCardProps) => {
   const { t } = useLanguage();
+
+  const handleMoreInfo = () => {
+    if (actividad.link) {
+      window.open(actividad.link, '_blank');
+    }
+  };
 
   return (
     <Card 
@@ -74,7 +80,11 @@ const ActivityCard = ({ actividad, index, getCategoriaColor, categorias }: Activ
           </div>
         </div>
         
-        <Button className="w-full bg-mercedario-red hover:bg-mercedario-red-dark text-mercedario-white">
+        <Button 
+          className="w-full bg-mercedario-red hover:bg-mercedario-red-dark text-mercedario-white"
+          onClick={handleMoreInfo}
+          disabled={!actividad.link}
+        >
           {t('activities.moreInfo')}
         </Button>
       </CardContent>

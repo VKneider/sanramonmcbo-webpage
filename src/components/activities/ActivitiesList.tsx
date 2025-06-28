@@ -20,7 +20,8 @@ const ActivitiesList = ({ filtroCategoria }: ActivitiesListProps) => {
       categoria: "retiros",
       participantes: "25 personas máx.",
       icono: Mountain,
-      imagen: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      imagen: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "https://example.com/retiro-juvenil"
     },
     {
       id: 2,
@@ -31,7 +32,8 @@ const ActivitiesList = ({ filtroCategoria }: ActivitiesListProps) => {
       categoria: "convivencias",
       participantes: "Familias completas",
       icono: Users,
-      imagen: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      imagen: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "https://example.com/convivencia-familiar"
     },
     {
       id: 3,
@@ -42,7 +44,8 @@ const ActivitiesList = ({ filtroCategoria }: ActivitiesListProps) => {
       categoria: "sociales",
       participantes: "Toda la comunidad",
       icono: HandHeart,
-      imagen: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      imagen: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "https://example.com/campana-alimentos"
     },
     {
       id: 4,
@@ -53,7 +56,8 @@ const ActivitiesList = ({ filtroCategoria }: ActivitiesListProps) => {
       categoria: "retiros",
       participantes: "40 personas máx.",
       icono: Heart,
-      imagen: "https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      imagen: "https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "https://example.com/retiro-pascua"
     },
     {
       id: 5,
@@ -64,7 +68,8 @@ const ActivitiesList = ({ filtroCategoria }: ActivitiesListProps) => {
       categoria: "convivencias",
       participantes: "Niños de 7-12 años",
       icono: Users,
-      imagen: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      imagen: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "https://example.com/juegos-catequesis"
     },
     {
       id: 6,
@@ -75,7 +80,8 @@ const ActivitiesList = ({ filtroCategoria }: ActivitiesListProps) => {
       categoria: "sociales",
       participantes: "Grupo de voluntarios",
       icono: HandHeart,
-      imagen: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+      imagen: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      link: "https://example.com/visita-hogar-ancianos"
     }
   ];
 
