@@ -10,75 +10,75 @@ interface ActivitiesListProps {
 const ActivitiesList = ({ filtroCategoria }: ActivitiesListProps) => {
   const { t } = useLanguage();
 
-  const actividades = [
+  const getActividades = () => [
     {
       id: 1,
-      titulo: "Retiro Espiritual Juvenil",
-      descripcion: "Un fin de semana de reflexión, oración y encuentro con Dios dirigido especialmente a jóvenes de 15 a 30 años.",
-      fecha: "15-17 Marzo 2024",
-      lugar: "Casa de Retiros La Merced",
+      titulo: t('activities.activitiesList.youthRetreat.title'),
+      descripcion: t('activities.activitiesList.youthRetreat.description'),
+      fecha: t('activities.activitiesList.youthRetreat.date'),
+      lugar: t('activities.activitiesList.youthRetreat.location'),
       categoria: "retiros",
-      participantes: "25 personas máx.",
+      participantes: t('activities.activitiesList.youthRetreat.participants'),
       icono: Mountain,
       imagen: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       link: "https://example.com/retiro-juvenil"
     },
     {
       id: 2,
-      titulo: "Convivencia Familiar",
-      descripcion: "Día de integración para familias con actividades recreativas, reflexiones y celebración eucarística.",
-      fecha: "28 Marzo 2024",
-      lugar: "Salón Parroquial y Jardines",
+      titulo: t('activities.activitiesList.familyGathering.title'),
+      descripcion: t('activities.activitiesList.familyGathering.description'),
+      fecha: t('activities.activitiesList.familyGathering.date'),
+      lugar: t('activities.activitiesList.familyGathering.location'),
       categoria: "convivencias",
-      participantes: "Familias completas",
+      participantes: t('activities.activitiesList.familyGathering.participants'),
       icono: Users,
       imagen: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       link: "https://example.com/convivencia-familiar"
     },
     {
       id: 3,
-      titulo: "Campaña de Alimentos",
-      descripcion: "Recolección y distribución de alimentos no perecederos para familias en situación vulnerable de nuestra comunidad.",
-      fecha: "5-12 Abril 2024",
-      lugar: "Atrio de la Parroquia",
+      titulo: t('activities.activitiesList.foodCampaign.title'),
+      descripcion: t('activities.activitiesList.foodCampaign.description'),
+      fecha: t('activities.activitiesList.foodCampaign.date'),
+      lugar: t('activities.activitiesList.foodCampaign.location'),
       categoria: "sociales",
-      participantes: "Toda la comunidad",
+      participantes: t('activities.activitiesList.foodCampaign.participants'),
       icono: HandHeart,
       imagen: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       link: "https://example.com/campana-alimentos"
     },
     {
       id: 4,
-      titulo: "Retiro de Pascua",
-      descripcion: "Retiro de preparación para la Semana Santa, centrado en la Pasión, Muerte y Resurrección de Jesucristo.",
-      fecha: "20-22 Abril 2024",
-      lugar: "Casa de Retiros San José",
+      titulo: t('activities.activitiesList.easterRetreat.title'),
+      descripcion: t('activities.activitiesList.easterRetreat.description'),
+      fecha: t('activities.activitiesList.easterRetreat.date'),
+      lugar: t('activities.activitiesList.easterRetreat.location'),
       categoria: "retiros",
-      participantes: "40 personas máx.",
+      participantes: t('activities.activitiesList.easterRetreat.participants'),
       icono: Heart,
       imagen: "https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       link: "https://example.com/retiro-pascua"
     },
     {
       id: 5,
-      titulo: "Tarde de Juegos y Catequesis",
-      descripcion: "Actividad lúdica y formativa para niños de primera comunión, combinando diversión con aprendizaje religioso.",
-      fecha: "10 Mayo 2024",
-      lugar: "Patio Parroquial",
+      titulo: t('activities.activitiesList.gamesCatechesis.title'),
+      descripcion: t('activities.activitiesList.gamesCatechesis.description'),
+      fecha: t('activities.activitiesList.gamesCatechesis.date'),
+      lugar: t('activities.activitiesList.gamesCatechesis.location'),
       categoria: "convivencias",
-      participantes: "Niños de 7-12 años",
+      participantes: t('activities.activitiesList.gamesCatechesis.participants'),
       icono: Users,
       imagen: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       link: "https://example.com/juegos-catequesis"
     },
     {
       id: 6,
-      titulo: "Visita a Hogar de Ancianos",
-      descripcion: "Actividad de servicio social visitando y acompañando a los adultos mayores del Hogar San Vicente de Paúl.",
-      fecha: "18 Mayo 2024",
-      lugar: "Hogar San Vicente de Paúl",
+      titulo: t('activities.activitiesList.nursingHomeVisit.title'),
+      descripcion: t('activities.activitiesList.nursingHomeVisit.description'),
+      fecha: t('activities.activitiesList.nursingHomeVisit.date'),
+      lugar: t('activities.activitiesList.nursingHomeVisit.location'),
       categoria: "sociales",
-      participantes: "Grupo de voluntarios",
+      participantes: t('activities.activitiesList.nursingHomeVisit.participants'),
       icono: HandHeart,
       imagen: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       link: "https://example.com/visita-hogar-ancianos"
@@ -92,6 +92,7 @@ const ActivitiesList = ({ filtroCategoria }: ActivitiesListProps) => {
     { value: 'sociales', label: t('activities.socialAction') }
   ];
 
+  const actividades = getActividades();
   const actividadesFiltradas = filtroCategoria === 'todas' 
     ? actividades 
     : actividades.filter(actividad => actividad.categoria === filtroCategoria);
