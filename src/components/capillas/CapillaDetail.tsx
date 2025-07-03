@@ -1,6 +1,7 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Clock, MapPin, BookOpen, History } from 'lucide-react';
+import { History, MapPin } from 'lucide-react';
+import InfoHorarios from '@/components/InfoHorarios';
 
 interface CapillaDetailProps {
   capillaId: string;
@@ -95,31 +96,12 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
               </p>
             </div>
 
-            {/* Schedules */}
-            <div className="bg-mercedario-cream rounded-lg p-8">
-              <div className="flex items-center mb-6">
-                <Clock className="h-6 w-6 text-mercedario-red mr-3" />
-                <h2 className="font-playfair text-2xl font-semibold text-mercedario-brown">
-                  {t('capillas.schedules')}
-                </h2>
-              </div>
-              <p className="text-mercedario-brown/80 text-lg font-medium">
-                {capilla.horarios}
-              </p>
-            </div>
-
-            {/* Location */}
-            <div className="bg-mercedario-cream rounded-lg p-8">
-              <div className="flex items-center mb-6">
-                <MapPin className="h-6 w-6 text-mercedario-red mr-3" />
-                <h2 className="font-playfair text-2xl font-semibold text-mercedario-brown">
-                  {t('capillas.location')}
-                </h2>
-              </div>
-              <p className="text-mercedario-brown/80 text-lg">
-                {capilla.ubicacion}
-              </p>
-            </div>
+            {/* Schedules using InfoHorarios component */}
+            <InfoHorarios 
+              capillaId={capillaId}
+              horarios={capilla.horarios}
+              imagen={capilla.imagen}
+            />
           </div>
 
           {/* Right column - Map */}
@@ -131,6 +113,9 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
                   Ubicación en el Mapa
                 </h2>
               </div>
+              <p className="text-mercedario-brown/80 text-lg mb-6">
+                {capilla.ubicacion}
+              </p>
               <div className="rounded-lg overflow-hidden shadow-lg h-96">
                 <iframe
                   src={capilla.mapsEmbed}

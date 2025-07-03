@@ -1,9 +1,49 @@
 
 import { useLanguage } from '../contexts/LanguageContext';
+import { Clock } from 'lucide-react';
 
-const InfoHorarios = () => {
+interface InfoHorariosProps {
+  capillaId?: string;
+  horarios?: string;
+  imagen?: string;
+}
+
+const InfoHorarios = ({ capillaId, horarios, imagen }: InfoHorariosProps) => {
   const { t } = useLanguage();
 
+  // Si es para una capilla específica, usar los datos pasados como props
+  if (capillaId && horarios && imagen) {
+    return (
+      <div className="bg-mercedario-red rounded-lg p-8 animate-fade-in">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <div className="flex items-center mb-6">
+              <Clock className="h-6 w-6 text-mercedario-white mr-3" />
+              <h3 className="font-playfair text-2xl font-semibold text-mercedario-white">
+                {t('capillas.schedules')}
+              </h3>
+            </div>
+            <p className="text-mercedario-cream text-lg font-medium">
+              {horarios}
+            </p>
+          </div>
+          
+          <div className="text-center">
+            <img 
+              src={imagen} 
+              alt="Capilla" 
+              className="rounded-lg shadow-lg mx-auto h-64 w-full object-cover"
+            />
+            <p className="mt-4 text-sm text-mercedario-cream italic">
+              "Vengan a mí todos los que están cansados y agobiados, y yo les daré descanso." - Mt 11,28
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Comportamiento original para la página principal
   return (
     <div className="bg-mercedario-red rounded-lg p-8 animate-fade-in">
       <div className="grid md:grid-cols-2 gap-8 items-center">
