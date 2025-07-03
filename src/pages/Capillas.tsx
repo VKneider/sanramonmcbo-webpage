@@ -4,11 +4,11 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CapillasHeader from '@/components/capillas/CapillasHeader';
 import CapillasFilter from '@/components/capillas/CapillasFilter';
-import CapillasList from '@/components/capillas/CapillasList';
+import CapillaDetail from '@/components/capillas/CapillaDetail';
 import CapillasCallToAction from '@/components/capillas/CapillasCallToAction';
 
 const Capillas = () => {
-  const [filtroCapilla, setFiltroCapilla] = useState('todas');
+  const [filtroCapilla, setFiltroCapilla] = useState('divinaMisericordia');
 
   return (
     <div className="min-h-screen bg-mercedario-cream">
@@ -18,7 +18,7 @@ const Capillas = () => {
         filtroCapilla={filtroCapilla} 
         setFiltroCapilla={setFiltroCapilla} 
       />
-      <CapillasList filtroCapilla={filtroCapilla} />
+      <CapillaDetail capillaId={filtroCapilla} />
       <CapillasCallToAction />
       <Footer />
     </div>

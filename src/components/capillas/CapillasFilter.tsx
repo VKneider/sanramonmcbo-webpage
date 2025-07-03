@@ -11,7 +11,6 @@ const CapillasFilter = ({ filtroCapilla, setFiltroCapilla }: CapillasFilterProps
   const { t } = useLanguage();
 
   const capillas = [
-    { value: 'todas', label: t('capillas.allChapels') },
     { value: 'divinaMisericordia', label: t('capillas.chapelsList.divinaMisericordia.title') },
     { value: 'nuestraSeñoraMerced', label: t('capillas.chapelsList.nuestraSeñoraMerced.title') },
     { value: 'sanPedroNolasco', label: t('capillas.chapelsList.sanPedroNolasco.title') },
