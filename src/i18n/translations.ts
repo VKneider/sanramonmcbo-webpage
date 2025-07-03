@@ -8,6 +8,7 @@ import { galleryTranslations } from './gallery';
 import { activitiesTranslations } from './activities';
 import { locationTranslations } from './location';
 import { footerTranslations } from './footer';
+import { capillasTranslations } from './capillas';
 
 export type Language = 'es' | 'en';
 
@@ -21,7 +22,8 @@ export const translations = {
     ...galleryTranslations.es,
     ...activitiesTranslations.es,
     ...locationTranslations.es,
-    ...footerTranslations.es
+    ...footerTranslations.es,
+    ...capillasTranslations.es
   },
   en: {
     ...navigationTranslations.en,
@@ -32,7 +34,8 @@ export const translations = {
     ...galleryTranslations.en,
     ...activitiesTranslations.en,
     ...locationTranslations.en,
-    ...footerTranslations.en
+    ...footerTranslations.en,
+    ...capillasTranslations.en
   }
 };
 

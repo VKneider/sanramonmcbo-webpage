@@ -6,7 +6,8 @@ export const navigationTranslations = {
       activities: 'Actividades',
       apostolates: 'Apostolados',
       parish: 'Parroquia',
-      gallery: 'Galería'
+      gallery: 'Galería',
+      chapels: 'Capillas'
     }
   },
   en: {
@@ -15,7 +16,8 @@ export const navigationTranslations = {
       activities: 'Activities',
       apostolates: 'Apostolates',
       parish: 'Parish',
-      gallery: 'Gallery'
+      gallery: 'Gallery',
+      chapels: 'Chapels'
     }
   }
 };
