@@ -5,14 +5,16 @@ import { Clock } from 'lucide-react';
 interface InfoHorariosProps {
   capillaId?: string;
   horarios?: string;
+  sundayMass?: string;
+  eucharisticAdoration?: string;
   imagen?: string;
 }
 
-const InfoHorarios = ({ capillaId, horarios, imagen }: InfoHorariosProps) => {
+const InfoHorarios = ({ capillaId, horarios, sundayMass, eucharisticAdoration, imagen }: InfoHorariosProps) => {
   const { t } = useLanguage();
 
   // Si es para una capilla específica, usar los datos pasados como props
-  if (capillaId && horarios && imagen) {
+  if (capillaId && imagen) {
     return (
       <div className="bg-mercedario-red rounded-lg p-8 animate-fade-in">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -23,9 +25,26 @@ const InfoHorarios = ({ capillaId, horarios, imagen }: InfoHorariosProps) => {
                 {t('capillas.schedules')}
               </h3>
             </div>
-            <p className="text-mercedario-cream text-lg font-medium">
-              {horarios}
-            </p>
+            <div className="space-y-4">
+              {sundayMass && (
+                <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
+                  <span className="font-semibold text-mercedario-white">{t('capillas.sundayMass')}</span>
+                  <span className="text-mercedario-cream">{sundayMass}</span>
+                </div>
+              )}
+              {horarios && (
+                <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
+                  <span className="font-semibold text-mercedario-white">Otras Misas</span>
+                  <span className="text-mercedario-cream">{horarios}</span>
+                </div>
+              )}
+              {eucharisticAdoration && (
+                <div className="flex justify-between items-center py-2">
+                  <span className="font-semibold text-mercedario-white">{t('capillas.eucharisticAdoration')}</span>
+                  <span className="text-mercedario-cream">{eucharisticAdoration}</span>
+                </div>
+              )}
+            </div>
           </div>
           
           <div className="text-center">

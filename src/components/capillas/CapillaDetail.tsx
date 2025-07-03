@@ -16,6 +16,8 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       descripcion: t('capillas.chapelsList.divinaMisericordia.description'),
       historia: t('capillas.chapelsList.divinaMisericordia.history'),
       horarios: t('capillas.chapelsList.divinaMisericordia.schedules'),
+      sundayMass: t('capillas.chapelsList.divinaMisericordia.sundayMass'),
+      eucharisticAdoration: t('capillas.chapelsList.divinaMisericordia.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.divinaMisericordia.location'),
       imagen: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.006!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjEiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v1234567890"
@@ -25,6 +27,8 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       descripcion: t('capillas.chapelsList.nuestraSeñoraMerced.description'),
       historia: t('capillas.chapelsList.nuestraSeñoraMerced.history'),
       horarios: t('capillas.chapelsList.nuestraSeñoraMerced.schedules'),
+      sundayMass: t('capillas.chapelsList.nuestraSeñoraMerced.sundayMass'),
+      eucharisticAdoration: t('capillas.chapelsList.nuestraSeñoraMerced.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.nuestraSeñoraMerced.location'),
       imagen: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.007!3d40.7129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjIiTiA3NMKwMDAnMjIuNiJX!5e0!3m2!1sen!2sus!4v1234567891"
@@ -34,6 +38,8 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       descripcion: t('capillas.chapelsList.sanPedroNolasco.description'),
       historia: t('capillas.chapelsList.sanPedroNolasco.history'),
       horarios: t('capillas.chapelsList.sanPedroNolasco.schedules'),
+      sundayMass: t('capillas.chapelsList.sanPedroNolasco.sundayMass'),
+      eucharisticAdoration: t('capillas.chapelsList.sanPedroNolasco.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.sanPedroNolasco.location'),
       imagen: 'https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.008!3d40.7130!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjMiTiA3NMKwMDAnMjMuNiJX!5e0!3m2!1sen!2sus!4v1234567892"
@@ -43,6 +49,8 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       descripcion: t('capillas.chapelsList.ermitaCarmen.description'),
       historia: t('capillas.chapelsList.ermitaCarmen.history'),
       horarios: t('capillas.chapelsList.ermitaCarmen.schedules'),
+      sundayMass: t('capillas.chapelsList.ermitaCarmen.sundayMass'),
+      eucharisticAdoration: t('capillas.chapelsList.ermitaCarmen.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.ermitaCarmen.location'),
       imagen: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.009!3d40.7131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjQiTiA3NMKwMDAnMjQuNiJX!5e0!3m2!1sen!2sus!4v1234567893"
@@ -100,6 +108,8 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
             <InfoHorarios 
               capillaId={capillaId}
               horarios={capilla.horarios}
+              sundayMass={capilla.sundayMass}
+              eucharisticAdoration={capilla.eucharisticAdoration}
               imagen={capilla.imagen}
             />
           </div>
