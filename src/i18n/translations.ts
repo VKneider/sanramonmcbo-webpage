@@ -9,6 +9,7 @@ import { activitiesTranslations } from './activities';
 import { locationTranslations } from './location';
 import { footerTranslations } from './footer';
 import { capillasTranslations } from './capillas';
+import { donationsTranslations } from './donations';
 
 export type Language = 'es' | 'en';
 
@@ -23,7 +24,8 @@ export const translations = {
     ...activitiesTranslations.es,
     ...locationTranslations.es,
     ...footerTranslations.es,
-    ...capillasTranslations.es
+    ...capillasTranslations.es,
+    ...donationsTranslations.es
   },
   en: {
     ...navigationTranslations.en,
@@ -35,7 +37,8 @@ export const translations = {
     ...activitiesTranslations.en,
     ...locationTranslations.en,
     ...footerTranslations.en,
-    ...capillasTranslations.en
+    ...capillasTranslations.en,
+    ...donationsTranslations.en
   }
 };
 
