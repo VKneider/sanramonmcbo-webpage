@@ -88,11 +88,11 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Left column - Information (takes 2 columns) */}
-          <div className="lg:col-span-2 space-y-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Left column - Information */}
+          <div className="space-y-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             {/* History */}
-            <div className="bg-mercedario-cream rounded-lg p-8 min-h-[400px]">
+            <div className="bg-mercedario-cream rounded-lg p-8">
               <div className="flex items-center mb-6">
                 <History className="h-6 w-6 text-mercedario-red mr-3" />
                 <h2 className="font-playfair text-2xl font-semibold text-mercedario-brown">
