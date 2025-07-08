@@ -5,7 +5,7 @@ import { aboutUsTranslations } from './aboutUs';
 import { whatWeDoTranslations } from './whatWeDo';
 import { apostoladosTranslations } from './apostolados';
 import { galleryTranslations } from './gallery';
-import { activitiesTranslations } from './activities';
+
 import { locationTranslations } from './location';
 import { footerTranslations } from './footer';
 import { capillasTranslations } from './capillas';
@@ -21,7 +21,7 @@ export const translations = {
     ...whatWeDoTranslations.es,
     ...apostoladosTranslations.es,
     ...galleryTranslations.es,
-    ...activitiesTranslations.es,
+    
     ...locationTranslations.es,
     ...footerTranslations.es,
     ...capillasTranslations.es,
@@ -34,7 +34,7 @@ export const translations = {
     ...whatWeDoTranslations.en,
     ...apostoladosTranslations.en,
     ...galleryTranslations.en,
-    ...activitiesTranslations.en,
+    
     ...locationTranslations.en,
     ...footerTranslations.en,
     ...capillasTranslations.en,
