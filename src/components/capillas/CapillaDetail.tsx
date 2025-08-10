@@ -1,15 +1,29 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import { History, MapPin } from 'lucide-react';
+import { History, MapPin, Users } from 'lucide-react';
 import InfoHorarios from '@/components/InfoHorarios';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { capillasTranslations } from '@/i18n/capillas';
+
+interface Apostolado {
+  id: string;
+  name: string;
+  description: string;
+  schedule: string;
+  ageRange: string;
+  contact: string;
+}
 
 interface CapillaDetailProps {
   capillaId: string;
 }
 
 const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
+  // Get the raw translation data based on current language
+  const currentLangData = capillasTranslations[language as keyof typeof capillasTranslations];
+  
   const capillaData = {
     divinaMisericordia: {
       titulo: t('capillas.chapelsList.divinaMisericordia.title'),
@@ -19,6 +33,7 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       sundayMass: t('capillas.chapelsList.divinaMisericordia.sundayMass'),
       eucharisticAdoration: t('capillas.chapelsList.divinaMisericordia.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.divinaMisericordia.location'),
+      apostolados: currentLangData.capillas.chapelsList.divinaMisericordia.apostolados || [],
       imagen: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.006!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjEiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v1234567890"
     },
@@ -30,6 +45,7 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       sundayMass: t('capillas.chapelsList.nuestraSeñoraMerced.sundayMass'),
       eucharisticAdoration: t('capillas.chapelsList.nuestraSeñoraMerced.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.nuestraSeñoraMerced.location'),
+      apostolados: currentLangData.capillas.chapelsList.nuestraSeñoraMerced.apostolados || [],
       imagen: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.007!3d40.7129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjIiTiA3NMKwMDAnMjIuNiJX!5e0!3m2!1sen!2sus!4v1234567891"
     },
@@ -41,6 +57,7 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       sundayMass: t('capillas.chapelsList.sanPedroNolasco.sundayMass'),
       eucharisticAdoration: t('capillas.chapelsList.sanPedroNolasco.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.sanPedroNolasco.location'),
+      apostolados: currentLangData.capillas.chapelsList.sanPedroNolasco.apostolados || [],
       imagen: 'https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.008!3d40.7130!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjMiTiA3NMKwMDAnMjMuNiJX!5e0!3m2!1sen!2sus!4v1234567892"
     },
@@ -52,6 +69,7 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       sundayMass: t('capillas.chapelsList.ermitaCarmen.sundayMass'),
       eucharisticAdoration: t('capillas.chapelsList.ermitaCarmen.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.ermitaCarmen.location'),
+      apostolados: currentLangData.capillas.chapelsList.ermitaCarmen.apostolados || [],
       imagen: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.009!3d40.7131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjQiTiA3NMKwMDAnMjQuNiJX!5e0!3m2!1sen!2sus!4v1234567893"
     }
@@ -112,6 +130,48 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
               eucharisticAdoration={capilla.eucharisticAdoration}
               imagen={capilla.imagen}
             />
+
+            {/* Apostolados */}
+            {capilla.apostolados && capilla.apostolados.length > 0 && (
+              <div className="bg-mercedario-cream rounded-lg p-8">
+                <div className="flex items-center mb-6">
+                  <Users className="h-6 w-6 text-mercedario-red mr-3" />
+                  <h2 className="font-playfair text-2xl font-semibold text-mercedario-brown">
+                    {t('capillas.apostolates')}
+                  </h2>
+                </div>
+                <p className="text-mercedario-brown/80 mb-6">
+                  {t('capillas.apostolatesDesc')}
+                </p>
+                <div className="grid gap-4">
+                  {capilla.apostolados.map((apostolado: Apostolado) => (
+                    <Card key={apostolado.id} className="bg-mercedario-white border-mercedario-brown/20">
+                      <CardHeader className="pb-3">
+                        <CardTitle className="text-lg text-mercedario-red">
+                          {apostolado.name}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-2">
+                        <p className="text-mercedario-brown/80 text-sm">
+                          {apostolado.description}
+                        </p>
+                        <div className="space-y-1 text-sm">
+                          <p className="text-mercedario-brown">
+                            <span className="font-medium">{t('capillas.schedule')}:</span> {apostolado.schedule}
+                          </p>
+                          <p className="text-mercedario-brown">
+                            <span className="font-medium">{t('capillas.ageRange')}:</span> {apostolado.ageRange}
+                          </p>
+                          <p className="text-mercedario-brown">
+                            <span className="font-medium">{t('capillas.contact')}:</span> {apostolado.contact}
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Right column - Map */}
