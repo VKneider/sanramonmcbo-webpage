@@ -45,6 +45,22 @@ export const capillasTranslations = {
               schedule: "Sábados: 4:00 PM - 6:00 PM",
               ageRange: "15-30 años",
               contact: "Coordinador: Pedro Martínez - Tel: 555-0124"
+            },
+            {
+              id: "coro-misericordia",
+              name: "Coro Jesús Misericordioso",
+              description: "Grupo de música litúrgica que anima las celebraciones eucarísticas.",
+              schedule: "Martes: 7:00 PM - 8:30 PM",
+              ageRange: "Todas las edades",
+              contact: "Coordinadora: Lucía Herrera - Tel: 555-0131"
+            },
+            {
+              id: "lectores-misericordia",
+              name: "Ministerio de Lectores",
+              description: "Proclamación de la Palabra de Dios en las celebraciones litúrgicas.",
+              schedule: "Domingos antes de misa",
+              ageRange: "Adultos y jóvenes",
+              contact: "Coordinador: Miguel Santos - Tel: 555-0132"
             }
           ]
         },
@@ -72,6 +88,22 @@ export const capillasTranslations = {
               schedule: "Domingos: 3:00 PM - 4:30 PM",
               ageRange: "Niños 7-12 años y padres",
               contact: "Coordinador: José Ramírez - Tel: 555-0126"
+            },
+            {
+              id: "damas-merced",
+              name: "Damas de la Merced",
+              description: "Grupo de mujeres dedicado al cuidado del templo y organización de festividades.",
+              schedule: "Jueves: 3:00 PM - 5:00 PM",
+              ageRange: "Mujeres adultas",
+              contact: "Coordinadora: Rosa María - Tel: 555-0133"
+            },
+            {
+              id: "adoracion-nocturna",
+              name: "Adoración Nocturna Mercedaria",
+              description: "Grupo de varones dedicado a la adoración eucarística nocturna.",
+              schedule: "Primer viernes del mes: 10:00 PM - 6:00 AM",
+              ageRange: "Hombres adultos",
+              contact: "Coordinador: Francisco Moreno - Tel: 555-0134"
             }
           ]
         },
