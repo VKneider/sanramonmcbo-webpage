@@ -9,77 +9,51 @@ const Apostolados: React.FC = () => {
   const [selectedApostolado, setSelectedApostolado] = useState<Apostolado | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Datos de ejemplo de apostolados
-  const apostolados: Apostolado[] = [
-    {
-      id: '1',
-      name: t('apostolados.youthCatholicAction.name'),
-      description: t('apostolados.youthCatholicAction.description'),
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop',
-      ageRange: '16-30 años',
-      schedule: 'Sábados 4:00 PM - 6:00 PM',
-      location: 'Salón parroquial',
-      activities: [
-        'Formación espiritual semanal',
-        'Retiros espirituales',
-        'Servicio social comunitario',
-        'Evangelización juvenil'
-      ],
-      requirements: 'Jóvenes bautizados con deseos de crecer en la fe',
-      contact: 'pastoral.juvenil@sanramonnnonato.org'
-    },
-    {
-      id: '2',
-      name: t('apostolados.familyPastoral.name'),
-      description: t('apostolados.familyPastoral.description'),
-      image: 'https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=400&h=300&fit=crop',
-      ageRange: 'Matrimonios y familias',
-      schedule: 'Domingos 6:00 PM - 8:00 PM',
-      location: 'Aula magna',
-      activities: [
-        'Preparación matrimonial',
-        'Formación familiar',
-        'Retiros para parejas',
-        'Acompañamiento espiritual'
-      ],
-      requirements: 'Parejas casadas o en preparación matrimonial',
-      contact: 'pastoral.familiar@sanramonnnonato.org'
-    },
-    {
-      id: '3',
-      name: t('apostolados.charismaticRenewal.name'),
-      description: t('apostolados.charismaticRenewal.description'),
-      image: 'https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=400&h=300&fit=crop',
-      ageRange: 'Todas las edades',
-      schedule: 'Jueves 7:00 PM - 9:00 PM',
-      location: 'Capilla de adoración',
-      activities: [
-        'Oración carismática',
-        'Sanación interior',
-        'Alabanza y adoración',
-        'Retiros de sanación'
-      ],
-      requirements: 'Personas bautizadas abiertas a la experiencia del Espíritu Santo',
-      contact: 'renovacion.carismatica@sanramonnnonato.org'
-    },
-    {
-      id: '4',
-      name: t('apostolados.caritas.name'),
-      description: t('apostolados.caritas.description'),
-      image: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop',
-      ageRange: 'Adultos',
-      schedule: 'Martes y Viernes 9:00 AM - 12:00 PM',
-      location: 'Centro de acopio parroquial',
-      activities: [
-        'Distribución de alimentos',
-        'Visita a enfermos',
-        'Apoyo a familias necesitadas',
-        'Programas de ayuda social'
-      ],
-      requirements: 'Personas con espíritu de servicio y disponibilidad de tiempo',
-      contact: 'caritas@sanramonnnonato.org'
+  // Configuración de capillas con sus apostolados
+  const chapelImages = {
+    divinaMisericordia: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop',
+    nuestraSeñoraMerced: 'https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=400&h=300&fit=crop',
+    sanPedroNolasco: 'https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=400&h=300&fit=crop',
+    ermitaCarmen: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop'
+  };
+
+  const chapelKeys = ['divinaMisericordia', 'nuestraSeñoraMerced', 'sanPedroNolasco', 'ermitaCarmen'];
+
+  // Generar apostolados organizados por capilla
+  const apostoladosByChapel = chapelKeys.map(chapelKey => {
+    try {
+      const chapelData = t(`apostolados.chapelsList.${chapelKey}`) as any;
+      if (!chapelData || typeof chapelData !== 'object' || !chapelData.apostolates) return null;
+
+      const apostolates = Object.keys(chapelData.apostolates).map((apostolateKey) => {
+        const apostolateData = chapelData.apostolates[apostolateKey];
+        return {
+          id: `${chapelKey}-${apostolateKey}`,
+          name: apostolateData.name,
+          description: apostolateData.description,
+          image: chapelImages[chapelKey as keyof typeof chapelImages],
+          ageRange: apostolateData.ageRange,
+          schedule: apostolateData.schedule,
+          location: apostolateData.location,
+          activities: apostolateData.activities,
+          requirements: apostolateData.requirements,
+          contact: apostolateData.contact
+        } as Apostolado;
+      });
+
+      return {
+        chapelKey,
+        chapelTitle: chapelData.title,
+        apostolates
+      };
+    } catch (error) {
+      return null;
     }
-  ];
+  }).filter(Boolean) as Array<{
+    chapelKey: string;
+    chapelTitle: string;
+    apostolates: Apostolado[];
+  }>;
 
   const handleMoreInfo = (apostolado: Apostolado) => {
     setSelectedApostolado(apostolado);
@@ -107,15 +81,22 @@ const Apostolados: React.FC = () => {
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {apostolados.map((apostolado) => (
-              <ApostolCard
-                key={apostolado.id}
-                apostolado={apostolado}
-                onMoreInfo={handleMoreInfo}
-              />
-            ))}
-          </div>
+          {apostoladosByChapel.map((chapel) => (
+            <div key={chapel.chapelKey} className="mb-16">
+              <h2 className="text-3xl font-bold text-mercedario-red mb-8 text-center">
+                {chapel.chapelTitle}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {chapel.apostolates.map((apostolado) => (
+                  <ApostolCard
+                    key={apostolado.id}
+                    apostolado={apostolado}
+                    onMoreInfo={handleMoreInfo}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
 
           <div className="text-center mt-12">
             <div className="bg-white rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
