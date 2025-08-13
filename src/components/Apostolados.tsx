@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import ApostoladadosFilter from './apostolados/ApostoladadosFilter';
+import ChapelFilter from './shared/ChapelFilter';
 import ApostoladadosDetail from './apostolados/ApostoladadosDetail';
 
 const Apostolados: React.FC = () => {
@@ -23,9 +23,10 @@ const Apostolados: React.FC = () => {
       </section>
 
       {/* Filtro de capillas */}
-      <ApostoladadosFilter 
+      <ChapelFilter 
         filtroCapilla={filtroCapilla} 
-        setFiltroCapilla={setFiltroCapilla} 
+        setFiltroCapilla={setFiltroCapilla}
+        translationPrefix="apostolados"
       />
 
       {/* Detalle de apostolados por capilla */}

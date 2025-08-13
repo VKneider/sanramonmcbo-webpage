@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CapillasHeader from '@/components/capillas/CapillasHeader';
-import CapillasFilter from '@/components/capillas/CapillasFilter';
+import ChapelFilter from '@/components/shared/ChapelFilter';
 import CapillaDetail from '@/components/capillas/CapillaDetail';
 import CapillasCallToAction from '@/components/capillas/CapillasCallToAction';
 
@@ -14,9 +14,10 @@ const Capillas = () => {
     <div className="min-h-screen bg-mercedario-cream">
       <Navigation />
       <CapillasHeader />
-      <CapillasFilter 
+      <ChapelFilter 
         filtroCapilla={filtroCapilla} 
-        setFiltroCapilla={setFiltroCapilla} 
+        setFiltroCapilla={setFiltroCapilla}
+        translationPrefix="capillas"
       />
       <CapillaDetail capillaId={filtroCapilla} />
       <CapillasCallToAction />
