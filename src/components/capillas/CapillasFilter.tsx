@@ -18,26 +18,25 @@ const CapillasFilter = ({ filtroCapilla, setFiltroCapilla }: CapillasFilterProps
   ];
 
   return (
-    <div className="bg-mercedario-white py-8 border-b border-mercedario-gold/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-8 bg-white">
+      <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-center gap-4">
           {capillas.map((capilla) => (
-            <Button
+            <button
               key={capilla.value}
-              variant={filtroCapilla === capilla.value ? "default" : "outline"}
               onClick={() => setFiltroCapilla(capilla.value)}
-              className={`transition-all duration-200 ${
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 filtroCapilla === capilla.value
-                  ? 'bg-mercedario-red text-mercedario-white hover:bg-mercedario-red/90'
-                  : 'border-mercedario-gold text-mercedario-brown hover:bg-mercedario-gold/10'
+                  ? 'bg-mercedario-red text-white shadow-lg'
+                  : 'bg-mercedario-cream text-mercedario-red border border-mercedario-red hover:bg-mercedario-red hover:text-white'
               }`}
             >
               {capilla.label}
-            </Button>
+            </button>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
