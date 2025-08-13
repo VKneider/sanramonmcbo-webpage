@@ -12,7 +12,7 @@ const Apostolados: React.FC = () => {
     <div className="min-h-screen bg-mercedario-cream">
       {/* Header */}
       <section className="min-h-[40vh] bg-mercedario-red flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
           <h1 className="font-playfair text-4xl md:text-5xl font-bold text-mercedario-white mb-4">
             {t('apostolados.title')}
           </h1>
@@ -32,9 +32,9 @@ const Apostolados: React.FC = () => {
       <ApostoladadosDetail capillaId={filtroCapilla} />
 
       {/* Sección de contacto */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white animate-fade-in">
         <div className="container mx-auto px-4">
-          <div className="text-center">
+          <div className="text-center animate-slide-in">
             <div className="bg-mercedario-cream rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-mercedario-red mb-4">
                 {t('apostolados.joinUs')}
