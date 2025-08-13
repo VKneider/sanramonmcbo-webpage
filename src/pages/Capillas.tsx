@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useSelectedChapel } from '@/hooks/useSelectedChapel';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CapillasHeader from '@/components/capillas/CapillasHeader';
@@ -8,18 +8,18 @@ import CapillaDetail from '@/components/capillas/CapillaDetail';
 import CapillasCallToAction from '@/components/capillas/CapillasCallToAction';
 
 const Capillas = () => {
-  const [filtroCapilla, setFiltroCapilla] = useState('divinaMisericordia');
+  const { selectedChapel, setSelectedChapel } = useSelectedChapel();
 
   return (
     <div className="min-h-screen bg-mercedario-cream">
       <Navigation />
       <CapillasHeader />
       <ChapelFilter 
-        filtroCapilla={filtroCapilla} 
-        setFiltroCapilla={setFiltroCapilla}
+        filtroCapilla={selectedChapel} 
+        setFiltroCapilla={setSelectedChapel}
         translationPrefix="capillas"
       />
-      <CapillaDetail capillaId={filtroCapilla} />
+      <CapillaDetail capillaId={selectedChapel} />
       <CapillasCallToAction />
       <Footer />
     </div>

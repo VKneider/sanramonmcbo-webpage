@@ -52,41 +52,41 @@ const ChapelFilter: React.FC<ChapelFilterProps> = ({
         <div className="md:hidden">
           <Carousel
             opts={{
-              align: "start",
-              loop: true,
+              align: "center",
+              loop: false,
             }}
-            className="w-full max-w-sm mx-auto"
+            className="w-full max-w-xs mx-auto"
           >
-            <CarouselContent className="-ml-1">
+            <CarouselContent className="-ml-2">
               {capillas.map((capilla) => (
-                <CarouselItem key={capilla.id} className="pl-1 basis-4/5">
-                  <button
-                    onClick={() => setFiltroCapilla(capilla.id)}
-                    className={`w-full px-4 py-3 rounded-full font-medium transition-all duration-300 text-sm ${
-                      filtroCapilla === capilla.id
-                        ? 'bg-mercedario-red text-white shadow-lg'
-                        : 'bg-mercedario-cream text-mercedario-red border border-mercedario-red hover:bg-mercedario-red hover:text-white'
-                    }`}
-                  >
-                    {t(`${translationPrefix}.chapelsList.${capilla.key}.title`)}
-                  </button>
+                <CarouselItem key={capilla.id} className="pl-2 basis-3/4">
+                  <div className="p-1">
+                    <button
+                      onClick={() => setFiltroCapilla(capilla.id)}
+                      className={`w-full px-3 py-2.5 rounded-full font-medium transition-all duration-300 text-xs leading-tight ${
+                        filtroCapilla === capilla.id
+                          ? 'bg-mercedario-red text-white shadow-lg scale-105'
+                          : 'bg-mercedario-cream text-mercedario-red border border-mercedario-red hover:bg-mercedario-red hover:text-white'
+                      }`}
+                    >
+                      {t(`${translationPrefix}.chapelsList.${capilla.key}.title`)}
+                    </button>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex -left-12" />
-            <CarouselNext className="hidden sm:flex -right-12" />
           </Carousel>
           
           {/* Indicators */}
-          <div className="flex justify-center mt-4 space-x-2">
-            {capillas.map((capilla, index) => (
+          <div className="flex justify-center mt-3 space-x-1.5">
+            {capillas.map((capilla) => (
               <button
                 key={capilla.id}
                 onClick={() => setFiltroCapilla(capilla.id)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
                   filtroCapilla === capilla.id
-                    ? 'bg-mercedario-red'
-                    : 'bg-gray-300'
+                    ? 'bg-mercedario-red scale-125'
+                    : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Ir a ${t(`${translationPrefix}.chapelsList.${capilla.key}.title`)}`}
               />

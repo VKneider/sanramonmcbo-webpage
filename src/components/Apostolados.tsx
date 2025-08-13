@@ -1,12 +1,13 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useSelectedChapel } from '@/hooks/useSelectedChapel';
 import ChapelFilter from './shared/ChapelFilter';
 import ApostoladadosDetail from './apostolados/ApostoladadosDetail';
 
 const Apostolados: React.FC = () => {
   const { t } = useLanguage();
-  const [filtroCapilla, setFiltroCapilla] = useState('divinaMisericordia');
+  const { selectedChapel, setSelectedChapel } = useSelectedChapel();
 
   return (
     <div className="min-h-screen bg-mercedario-cream">
@@ -24,13 +25,13 @@ const Apostolados: React.FC = () => {
 
       {/* Filtro de capillas */}
       <ChapelFilter 
-        filtroCapilla={filtroCapilla} 
-        setFiltroCapilla={setFiltroCapilla}
+        filtroCapilla={selectedChapel} 
+        setFiltroCapilla={setSelectedChapel}
         translationPrefix="apostolados"
       />
 
       {/* Detalle de apostolados por capilla */}
-      <ApostoladadosDetail capillaId={filtroCapilla} />
+      <ApostoladadosDetail capillaId={selectedChapel} />
 
       {/* Sección de contacto */}
       <section className="py-16 bg-white animate-fade-in">
