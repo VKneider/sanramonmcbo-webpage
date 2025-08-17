@@ -8,7 +8,8 @@ import CapillaDetail from '@/components/capillas/CapillaDetail';
 import CapillasCallToAction from '@/components/capillas/CapillasCallToAction';
 
 const Capillas = () => {
-  const { selectedChapel, setSelectedChapel } = useSelectedChapel();
+  const validChapels = ['divinaMisericordia', 'nuestraSeñoraMerced', 'sanPedroNolasco', 'ermitaCarmen'];
+  const { selectedChapel, setSelectedChapel } = useSelectedChapel({ validChapels });
 
   return (
     <div className="min-h-screen bg-mercedario-cream">
