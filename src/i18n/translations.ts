@@ -5,6 +5,7 @@ import { aboutUsTranslations } from './aboutUs';
 import { whatWeDoTranslations } from './whatWeDo';
 import { apostoladosTranslations } from './apostolados';
 import { galleryTranslations } from './gallery';
+import { clergyTranslations } from './clergy';
 
 import { locationTranslations } from './location';
 import { footerTranslations } from './footer';
@@ -21,6 +22,7 @@ export const translations = {
     ...whatWeDoTranslations.es,
     ...apostoladosTranslations.es,
     ...galleryTranslations.es,
+    ...clergyTranslations.es,
     
     ...locationTranslations.es,
     ...footerTranslations.es,
@@ -34,6 +36,7 @@ export const translations = {
     ...whatWeDoTranslations.en,
     ...apostoladosTranslations.en,
     ...galleryTranslations.en,
+    ...clergyTranslations.en,
     
     ...locationTranslations.en,
     ...footerTranslations.en,
