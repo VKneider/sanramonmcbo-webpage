@@ -14,8 +14,8 @@ const Index = () => {
       <Navigation />
       <Hero />
       <QuienesSomos />
-      <QueHacemos />
       <Clergy />
+      <QueHacemos />
       <LocationSection />
       <Donaciones />
       <Footer />

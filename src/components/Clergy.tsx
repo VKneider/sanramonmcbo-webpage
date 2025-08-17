@@ -24,7 +24,7 @@ const Clergy: React.FC = () => {
     <section className="py-16 bg-mercedario-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-mercedario-red mb-4">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-mercedario-brown mb-4">
             {t('clergy.title')}
           </h2>
           <p className="text-lg text-mercedario-brown max-w-2xl mx-auto">

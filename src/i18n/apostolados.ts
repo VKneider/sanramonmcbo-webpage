@@ -15,6 +15,41 @@ export const apostoladosTranslations = {
       contactInfo: "Información de contacto",
       officeHours: "Atención: Lun-Vie 9AM-6PM",
       chapelsList: {
+        temploSanRamon: {
+          title: "Templo San Ramón Nonato",
+          apostolates: {
+            choir: {
+              name: "Coro Parroquial San Ramón",
+              description: "Ministerio de música litúrgica que anima las celebraciones eucarísticas.",
+              ageRange: "Jóvenes y adultos",
+              schedule: "Jueves 7:00 PM - 8:30 PM, Domingos antes de Misa",
+              location: "Templo Parroquial",
+              activities: ["Canto litúrgico", "Ensayos semanales", "Celebraciones especiales"],
+              requirements: "Gusto por la música y el canto",
+              contact: "coro@sanramonnnonato.org"
+            },
+            lectores: {
+              name: "Ministerio de Lectores",
+              description: "Proclaman la Palabra de Dios en las celebraciones litúrgicas.",
+              ageRange: "Jóvenes y adultos",
+              schedule: "Sábados 6:00 PM - 7:00 PM (preparación)",
+              location: "Templo Parroquial",
+              activities: ["Proclamación de lecturas", "Formación bíblica", "Preparación litúrgica"],
+              requirements: "Buena dicción y conocimiento básico bíblico",
+              contact: "lectores@sanramonnnonato.org"
+            },
+            eucharisticMinisters: {
+              name: "Ministros Extraordinarios de la Eucaristía",
+              description: "Auxilian en la distribución de la Sagrada Comunión.",
+              ageRange: "Adultos confirmados",
+              schedule: "Según horarios de Misa",
+              location: "Templo Parroquial",
+              activities: ["Distribución de la Comunión", "Visita a enfermos", "Formación litúrgica"],
+              requirements: "Confirmados, vida cristiana ejemplar",
+              contact: "ministros@sanramonnnonato.org"
+            }
+          }
+        },
         divinaMisericordia: {
           title: "Jesús de la Divina Misericordia",
           apostolates: {
@@ -124,6 +159,41 @@ export const apostoladosTranslations = {
       contactInfo: "Contact information",
       officeHours: "Hours: Mon-Fri 9AM-6PM",
       chapelsList: {
+        temploSanRamon: {
+          title: "San Ramón Nonato Temple",
+          apostolates: {
+            choir: {
+              name: "San Ramón Parish Choir",
+              description: "Liturgical music ministry that animates Eucharistic celebrations.",
+              ageRange: "Youth and adults",
+              schedule: "Thursdays 7:00 PM - 8:30 PM, Sundays before Mass",
+              location: "Parish Temple",
+              activities: ["Liturgical singing", "Weekly rehearsals", "Special celebrations"],
+              requirements: "Love for music and singing",
+              contact: "choir@sanramonnnonato.org"
+            },
+            lectores: {
+              name: "Lectors Ministry",
+              description: "Proclaim the Word of God in liturgical celebrations.",
+              ageRange: "Youth and adults",
+              schedule: "Saturdays 6:00 PM - 7:00 PM (preparation)",
+              location: "Parish Temple",
+              activities: ["Scripture proclamation", "Biblical formation", "Liturgical preparation"],
+              requirements: "Good diction and basic biblical knowledge",
+              contact: "lectors@sanramonnnonato.org"
+            },
+            eucharisticMinisters: {
+              name: "Extraordinary Ministers of the Eucharist",
+              description: "Assist in the distribution of Holy Communion.",
+              ageRange: "Confirmed adults",
+              schedule: "According to Mass schedules",
+              location: "Parish Temple",
+              activities: ["Communion distribution", "Visits to the sick", "Liturgical formation"],
+              requirements: "Confirmed, exemplary Christian life",
+              contact: "ministers@sanramonnnonato.org"
+            }
+          }
+        },
         divinaMisericordia: {
           title: "Jesus of Divine Mercy",
           apostolates: {

@@ -22,6 +22,7 @@ const ChapelFilter: React.FC<ChapelFilterProps> = ({
   const { t } = useLanguage();
 
   const capillas = [
+    { id: 'temploSanRamon', key: 'temploSanRamon' },
     { id: 'divinaMisericordia', key: 'divinaMisericordia' },
     { id: 'nuestraSeñoraMerced', key: 'nuestraSeñoraMerced' },
     { id: 'sanPedroNolasco', key: 'sanPedroNolasco' },
