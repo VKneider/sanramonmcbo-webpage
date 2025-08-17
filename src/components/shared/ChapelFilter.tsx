@@ -21,13 +21,17 @@ const ChapelFilter: React.FC<ChapelFilterProps> = ({
 }) => {
   const { t } = useLanguage();
 
-  const capillas = [
+  const allCapillas = [
     { id: 'temploSanRamon', key: 'temploSanRamon' },
     { id: 'divinaMisericordia', key: 'divinaMisericordia' },
     { id: 'nuestraSeñoraMerced', key: 'nuestraSeñoraMerced' },
     { id: 'sanPedroNolasco', key: 'sanPedroNolasco' },
     { id: 'ermitaCarmen', key: 'ermitaCarmen' }
   ];
+
+  const capillas = translationPrefix === 'capillas' 
+    ? allCapillas.filter(capilla => capilla.id !== 'temploSanRamon')
+    : allCapillas;
 
   return (
     <section className="py-8 bg-white">
