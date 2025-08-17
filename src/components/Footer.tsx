@@ -35,14 +35,14 @@ const Footer = () => {
               <div className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-mercedario-gold mt-1 flex-shrink-0" />
                 <p className="text-mercedario-cream text-sm">
-                  Calle Principal #123<br />
-                  Colonia Centro<br />
-                  Ciudad, Estado CP
+                  Calle NO, con Avenida 11A<br />
+                  Maracaibo 4002, Zulia<br />
+                  Venezuela
                 </p>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5 text-mercedario-gold" />
-                <p className="text-mercedario-cream text-sm">(555) 123-4567</p>
+                <p className="text-mercedario-cream text-sm">0261-748-0485</p>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-mercedario-gold" />
@@ -65,10 +65,10 @@ const Footer = () => {
                   <p>12:00 PM, 6:00 PM</p>
                 </div>
               </div>
-              <div className="text-mercedario-cream text-sm ml-7">
-                <p className="font-medium">{t('footer.weekdayMasses')}</p>
-                <p>6:30 AM, 6:00 PM</p>
-              </div>
+                              <div className="text-mercedario-cream text-sm ml-7">
+                  <p className="font-medium">{t('footer.weekdayMasses')}</p>
+                  <p>5:00 PM, 6:00 PM</p>
+                </div>
             </div>
           </div>
         </div>

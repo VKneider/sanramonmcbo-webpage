@@ -73,19 +73,19 @@ const InfoHorarios = ({ capillaId, horarios, sundayMass, eucharisticAdoration, i
           <div className="space-y-4">
             <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
               <span className="font-semibold text-mercedario-white">{t('whatWeDo.sundayMasses')}</span>
-              <span className="text-mercedario-cream">8:00 AM - 10:00 AM - 12:00 PM - 6:00 PM</span>
+              <span className="text-mercedario-cream">Sábados: 5:00 PM y 6:00 PM<br />Domingos: 8:00 AM, 10:00 AM y 12:00 PM</span>
             </div>
             <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
               <span className="font-semibold text-mercedario-white">{t('whatWeDo.weekdayMasses')}</span>
-              <span className="text-mercedario-cream">6:30 AM - 6:00 PM</span>
+              <span className="text-mercedario-cream">5:00 PM y 6:00 PM</span>
             </div>
             <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
-              <span className="font-semibold text-mercedario-white">{t('whatWeDo.adoration')}</span>
-              <span className="text-mercedario-cream">Viernes 7:00 PM - 8:00 PM</span>
+              <span className="font-semibold text-mercedario-white">Rosario</span>
+              <span className="text-mercedario-cream">Lunes a Sábado 4:00 PM</span>
             </div>
             <div className="flex justify-between items-center py-2">
-              <span className="font-semibold text-mercedario-white">{t('whatWeDo.confessions')}</span>
-              <span className="text-mercedario-cream">Sábados 4:00 PM - 5:30 PM</span>
+              <span className="font-semibold text-mercedario-white">{t('whatWeDo.adoration')}</span>
+              <span className="text-mercedario-cream">Jueves 7:00 PM</span>
             </div>
           </div>
         </div>

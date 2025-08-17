@@ -45,9 +45,9 @@ const LocationSection = () => {
                   <div>
                     <p className="font-semibold text-mercedario-brown">Dirección:</p>
                     <p className="text-mercedario-brown/80">
-                      Calle Principal #123<br />
-                      Colonia Centro<br />
-                      Ciudad, Estado CP
+                      Calle NO, con Avenida 11A<br />
+                      Maracaibo 4002, Zulia<br />
+                      Venezuela
                     </p>
                   </div>
                 </div>
@@ -56,21 +56,11 @@ const LocationSection = () => {
                   <Phone className="h-6 w-6 text-mercedario-red flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-mercedario-brown">Teléfono:</p>
-                    <p className="text-mercedario-brown/80">(555) 123-4567</p>
+                    <p className="text-mercedario-brown/80">0261-748-0485</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-3">
-                  <Clock className="h-6 w-6 text-mercedario-red mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-mercedario-brown">Horarios de Atención:</p>
-                    <p className="text-mercedario-brown/80">
-                      Lunes a Viernes: 9:00 AM - 6:00 PM<br />
-                      Sábados: 9:00 AM - 2:00 PM<br />
-                      Domingos: Solo durante las misas
-                    </p>
-                  </div>
-                </div>
+
               </div>
             </div>
 

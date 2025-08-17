@@ -74,20 +74,6 @@ const QueHacemos = () => {
         </div>
 
         <InfoHorarios />
-
-        <div className="text-center mt-16 animate-fade-in">
-          <h3 className="font-playfair text-2xl font-semibold text-mercedario-brown mb-4">
-            {t('whatWeDo.participate')}
-          </h3>
-          <p className="text-mercedario-brown/80 mb-6 max-w-2xl mx-auto">
-            {t('whatWeDo.participateDesc')}
-          </p>
-          <div className="bg-mercedario-cream rounded-lg p-4 inline-block border border-mercedario-gold">
-            <p className="text-mercedario-red font-semibold">
-              📞 {t('whatWeDo.contact')} (555) 123-4567 | ✉️ info@sanramonnonato.org
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

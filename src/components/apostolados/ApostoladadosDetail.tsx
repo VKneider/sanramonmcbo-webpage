@@ -19,6 +19,13 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
     ermitaCarmen: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop'
   };
 
+  // Imágenes específicas para apostolados del templo San Ramón Nonato
+  const temploApostoladoImages = {
+    choir: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop', // Coro con instrumentos musicales
+    lectores: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop', // Persona leyendo la Biblia
+    eucharisticMinisters: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?w=400&h=300&fit=crop' // Iglesia/altar
+  };
+
   const handleMoreInfo = (apostolado: Apostolado) => {
     setSelectedApostolado(apostolado);
     setIsModalOpen(true);
@@ -39,11 +46,18 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
 
       const apostolates = Object.keys(chapelData.apostolates).map((apostolateKey) => {
         const apostolateData = chapelData.apostolates[apostolateKey];
+        
+        // Asignar imagen específica para apostolados del templo San Ramón Nonato
+        let imageUrl = chapelImages[capillaId as keyof typeof chapelImages];
+        if (capillaId === 'temploSanRamon' && temploApostoladoImages[apostolateKey as keyof typeof temploApostoladoImages]) {
+          imageUrl = temploApostoladoImages[apostolateKey as keyof typeof temploApostoladoImages];
+        }
+        
         return {
           id: `${capillaId}-${apostolateKey}`,
           name: apostolateData.name,
           description: apostolateData.description,
-          image: chapelImages[capillaId as keyof typeof chapelImages],
+          image: imageUrl,
           ageRange: apostolateData.ageRange,
           schedule: apostolateData.schedule,
           location: apostolateData.location,
