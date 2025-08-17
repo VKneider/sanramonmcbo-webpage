@@ -21,7 +21,7 @@ const LocationSection = () => {
           {/* Mapa */}
           <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.2738374586786!2d-74.07209908570738!3d4.710988796608639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f2573c4c0d015%3A0x7e9c5f0b4b8a8c4a!2sBogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sco!4v1640995200000!5m2!1ses!2sco"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.3842047340336!2d-71.61910082519616!3d10.70482008943965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e899f26509f08a5%3A0x24b428b32ab321bf!2sIglesia%20San%20Ram%C3%B3n%20Nonato!5e0!3m2!1ses-419!2sve!4v1755452580297!5m2!1ses-419!2sve"
               width="100%"
               height="100%"
               style={{ border: 0 }}

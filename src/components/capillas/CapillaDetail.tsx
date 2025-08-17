@@ -20,7 +20,7 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       eucharisticAdoration: t('capillas.chapelsList.divinaMisericordia.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.divinaMisericordia.location'),
       imagen: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.006!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjEiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v1234567890"
+      mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4072.7070876309544!2d-71.61069269046317!3d10.706283665480935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e899f0051b2c083%3A0xdff32ed8481207b3!2sCapilla%20Jes%C3%BAs%20de%20la%20Divina%20Misericordia!5e0!3m2!1ses-419!2sve!4v1755453139407!5m2!1ses-419!2sve"
     },
     nuestraSeñoraMerced: {
       titulo: t('capillas.chapelsList.nuestraSeñoraMerced.title'),
@@ -42,7 +42,7 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       eucharisticAdoration: t('capillas.chapelsList.sanPedroNolasco.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.sanPedroNolasco.location'),
       imagen: 'https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.008!3d40.7130!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjMiTiA3NMKwMDAnMjMuNiJX!5e0!3m2!1sen!2sus!4v1234567892"
+      mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.3126625516516!2d-71.61761332519619!3d10.71034968943445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e899f00231723bd%3A0x47a84251bfe62554!2sCapilla%20San%20Pedro%20Nolasco!5e0!3m2!1ses-419!2sve!4v1755452923162!5m2!1ses-419!2sve"
     },
     ermitaCarmen: {
       titulo: t('capillas.chapelsList.ermitaCarmen.title'),
@@ -53,7 +53,7 @@ const CapillaDetail = ({ capillaId }: CapillaDetailProps) => {
       eucharisticAdoration: t('capillas.chapelsList.ermitaCarmen.eucharisticAdoration'),
       ubicacion: t('capillas.chapelsList.ermitaCarmen.location'),
       imagen: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.5!2d-74.009!3d40.7131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjQiTiA3NMKwMDAnMjQuNiJX!5e0!3m2!1sen!2sus!4v1234567893"
+      mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62732.46602531828!2d-71.64932154635308!3d10.674245053761274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e899f1c35e0f84f%3A0x7fdd66cf42d91150!2sCapilla%20Nuestra%20Se%C3%B1ora%20del%20Carmen!5e0!3m2!1ses-419!2sve!4v1755453012883!5m2!1ses-419!2sve"
     }
   };
 
