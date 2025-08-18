@@ -1,8 +1,9 @@
-import { Heart, CreditCard, Building2, Copy } from 'lucide-react';
+import { Heart, CreditCard, Building2, Copy, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
+import { donations } from '@/data/donations';
 
 const Donaciones = () => {
   const { t } = useLanguage();
@@ -15,21 +16,6 @@ const Donaciones = () => {
       description: `${label}: ${text}`,
     });
   };
-
-  const bankAccounts = [
-    {
-      bank: 'BBVA',
-      accountNumber: '1234567890123456',
-      clabe: '012345678901234567',
-      accountHolder: 'Parroquia San Ramón Nonato'
-    },
-    {
-      bank: 'Santander',
-      accountNumber: '9876543210987654',
-      clabe: '098765432109876543',
-      accountHolder: 'Parroquia San Ramón Nonato'
-    }
-  ];
 
   return (
     <section className="py-20 bg-gradient-to-br from-mercedario-cream to-mercedario-white">
@@ -47,54 +33,111 @@ const Donaciones = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {bankAccounts.map((account, index) => (
-            <Card key={index} className="border-mercedario-gold/20 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="bg-mercedario-brown/5">
-                <CardTitle className="flex items-center space-x-2 text-mercedario-brown">
-                  <Building2 className="h-5 w-5 text-mercedario-gold" />
-                  <span>{account.bank}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6 space-y-4">
-                <div>
-                  <p className="text-sm text-mercedario-brown/60 mb-1">{t('donations.accountHolder')}</p>
-                  <p className="font-medium text-mercedario-brown">{account.accountHolder}</p>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-mercedario-cream/30 rounded-lg">
-                    <div>
-                      <p className="text-sm text-mercedario-brown/60">{t('donations.accountNumber')}</p>
-                      <p className="font-mono text-mercedario-brown font-medium">{account.accountNumber}</p>
-                    </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => copyToClipboard(account.accountNumber, t('donations.accountNumber'))}
-                      className="text-mercedario-gold hover:text-mercedario-brown hover:bg-mercedario-gold/10"
-                    >
-                      <Copy className="h-4 w-4" />
-                    </Button>
-                  </div>
+          {/* Transferencias */}
+          <Card className="border-mercedario-gold/20 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <CardHeader className="bg-mercedario-brown/5">
+              <CardTitle className="flex items-center space-x-2 text-mercedario-brown">
+                <Building2 className="h-5 w-5 text-mercedario-gold" />
+                <span>{t('donations.transferInfo')}</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-6 space-y-4">
+              <div>
+                <p className="text-sm text-mercedario-brown/60 mb-1">{t('donations.bank')}</p>
+                <p className="font-medium text-mercedario-brown">{donations.transferInfo.bank}</p>
+              </div>
+              
+              <div>
+                <p className="text-sm text-mercedario-brown/60 mb-1">{t('donations.beneficiary')}</p>
+                <p className="font-medium text-mercedario-brown">{donations.transferInfo.beneficiary}</p>
+              </div>
 
-                  <div className="flex items-center justify-between p-3 bg-mercedario-cream/30 rounded-lg">
-                    <div>
-                      <p className="text-sm text-mercedario-brown/60">{t('donations.clabe')}</p>
-                      <p className="font-mono text-mercedario-brown font-medium">{account.clabe}</p>
-                    </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => copyToClipboard(account.clabe, t('donations.clabe'))}
-                      className="text-mercedario-gold hover:text-mercedario-brown hover:bg-mercedario-gold/10"
-                    >
-                      <Copy className="h-4 w-4" />
-                    </Button>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between p-3 bg-mercedario-cream/30 rounded-lg">
+                  <div>
+                    <p className="text-sm text-mercedario-brown/60">{t('donations.accountNumber')}</p>
+                    <p className="font-mono text-mercedario-brown font-medium">{donations.transferInfo.accountNumber}</p>
                   </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => copyToClipboard(donations.transferInfo.accountNumber, t('donations.accountNumber'))}
+                    className="text-mercedario-gold hover:text-mercedario-brown hover:bg-mercedario-gold/10"
+                  >
+                    <Copy className="h-4 w-4" />
+                  </Button>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
+
+                <div className="flex items-center justify-between p-3 bg-mercedario-cream/30 rounded-lg">
+                  <div>
+                    <p className="text-sm text-mercedario-brown/60">{t('donations.rif')}</p>
+                    <p className="font-mono text-mercedario-brown font-medium">{donations.transferInfo.rif}</p>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => copyToClipboard(donations.transferInfo.rif, t('donations.rif'))}
+                    className="text-mercedario-gold hover:text-mercedario-brown hover:bg-mercedario-gold/10"
+                  >
+                    <Copy className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Pago Móvil */}
+          <Card className="border-mercedario-gold/20 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <CardHeader className="bg-mercedario-brown/5">
+              <CardTitle className="flex items-center space-x-2 text-mercedario-brown">
+                <Smartphone className="h-5 w-5 text-mercedario-gold" />
+                <span>{t('donations.mobilePayment')}</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-6 space-y-4">
+              <div>
+                <p className="text-sm text-mercedario-brown/60 mb-1">{t('donations.bank')}</p>
+                <p className="font-medium text-mercedario-brown">{donations.mobilePayment.bank}</p>
+              </div>
+              
+              <div>
+                <p className="text-sm text-mercedario-brown/60 mb-1">{t('donations.beneficiary')}</p>
+                <p className="font-medium text-mercedario-brown">{donations.transferInfo.beneficiary}</p>
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-center justify-between p-3 bg-mercedario-cream/30 rounded-lg">
+                  <div>
+                    <p className="text-sm text-mercedario-brown/60">{t('donations.phoneNumber')}</p>
+                    <p className="font-mono text-mercedario-brown font-medium">{donations.mobilePayment.phoneNumber}</p>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => copyToClipboard(donations.mobilePayment.phoneNumber, t('donations.phoneNumber'))}
+                    className="text-mercedario-gold hover:text-mercedario-brown hover:bg-mercedario-gold/10"
+                  >
+                    <Copy className="h-4 w-4" />
+                  </Button>
+                </div>
+
+                <div className="flex items-center justify-between p-3 bg-mercedario-cream/30 rounded-lg">
+                  <div>
+                    <p className="text-sm text-mercedario-brown/60">{t('donations.rif')}</p>
+                    <p className="font-mono text-mercedario-brown font-medium">{donations.mobilePayment.rif}</p>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => copyToClipboard(donations.mobilePayment.rif, t('donations.rif'))}
+                    className="text-mercedario-gold hover:text-mercedario-brown hover:bg-mercedario-gold/10"
+                  >
+                    <Copy className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="text-center mt-12">

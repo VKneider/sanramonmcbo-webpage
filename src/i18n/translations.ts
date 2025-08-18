@@ -8,6 +8,7 @@ import { galleryTranslations } from './gallery';
 import { clergyTranslations } from './clergy';
 
 import { locationTranslations } from './location';
+import { contactTranslations } from './contact';
 import { footerTranslations } from './footer';
 import { capillasTranslations } from './capillas';
 import { donationsTranslations } from './donations';
@@ -25,6 +26,7 @@ export const translations = {
     ...clergyTranslations.es,
     
     ...locationTranslations.es,
+    ...contactTranslations.es,
     ...footerTranslations.es,
     ...capillasTranslations.es,
     ...donationsTranslations.es
@@ -39,6 +41,7 @@ export const translations = {
     ...clergyTranslations.en,
     
     ...locationTranslations.en,
+    ...contactTranslations.en,
     ...footerTranslations.en,
     ...capillasTranslations.en,
     ...donationsTranslations.en

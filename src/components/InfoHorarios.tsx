@@ -34,7 +34,7 @@ const InfoHorarios = ({ capillaId, horarios, sundayMass, eucharisticAdoration, i
               )}
               {horarios && (
                 <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
-                  <span className="font-semibold text-mercedario-white">Otras Misas</span>
+                  <span className="font-semibold text-mercedario-white">{t('whatWeDo.otherMasses')}</span>
                   <span className="text-mercedario-cream">{horarios}</span>
                 </div>
               )}
@@ -73,19 +73,22 @@ const InfoHorarios = ({ capillaId, horarios, sundayMass, eucharisticAdoration, i
           <div className="space-y-4">
             <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
               <span className="font-semibold text-mercedario-white">{t('whatWeDo.sundayMasses')}</span>
-              <span className="text-mercedario-cream">Sábados: 5:00 PM y 6:00 PM<br />Domingos: 8:00 AM, 10:00 AM y 12:00 PM</span>
+              <span className="text-mercedario-cream">
+                {t('whatWeDo.saturdayMasses')}<br />
+                {t('whatWeDo.sundayMassesTimes')}
+              </span>
             </div>
             <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
               <span className="font-semibold text-mercedario-white">{t('whatWeDo.weekdayMasses')}</span>
-              <span className="text-mercedario-cream">5:00 PM y 6:00 PM</span>
+              <span className="text-mercedario-cream">{t('whatWeDo.weekdayMassesTimes')}</span>
             </div>
             <div className="flex justify-between items-center py-2 border-b border-mercedario-white/20">
-              <span className="font-semibold text-mercedario-white">Rosario</span>
-              <span className="text-mercedario-cream">Lunes a Sábado 4:00 PM</span>
+              <span className="font-semibold text-mercedario-white">{t('whatWeDo.rosary')}</span>
+              <span className="text-mercedario-cream">{t('whatWeDo.rosarySchedule')}</span>
             </div>
             <div className="flex justify-between items-center py-2">
               <span className="font-semibold text-mercedario-white">{t('whatWeDo.adoration')}</span>
-              <span className="text-mercedario-cream">Jueves 7:00 PM</span>
+              <span className="text-mercedario-cream">{t('whatWeDo.adorationSchedule')}</span>
             </div>
           </div>
         </div>

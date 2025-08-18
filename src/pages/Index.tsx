@@ -6,6 +6,7 @@ import QueHacemos from '@/components/QueHacemos';
 import Clergy from '@/components/Clergy';
 import Donaciones from '@/components/Donaciones';
 import LocationSection from '@/components/LocationSection';
+import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -17,6 +18,7 @@ const Index = () => {
       <Clergy />
       <QueHacemos />
       <LocationSection />
+      <ContactSection />
       <Donaciones />
       <Footer />
     </div>

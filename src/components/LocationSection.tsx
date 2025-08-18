@@ -1,6 +1,7 @@
 
 import { MapPin, Phone, Clock } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { parishInfo } from '@/data/parishInfo';
 
 const LocationSection = () => {
   const { t } = useLanguage();
@@ -21,7 +22,7 @@ const LocationSection = () => {
           {/* Mapa */}
           <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.3842047340336!2d-71.61910082519616!3d10.70482008943965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e899f26509f08a5%3A0x24b428b32ab321bf!2sIglesia%20San%20Ram%C3%B3n%20Nonato!5e0!3m2!1ses-419!2sve!4v1755452580297!5m2!1ses-419!2sve"
+              src={parishInfo.location.googleMapsEmbed}
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -32,8 +33,9 @@ const LocationSection = () => {
             ></iframe>
           </div>
 
-          {/* Información de contacto y direcciones */}
+          {/* Información de ubicación y direcciones */}
           <div className="space-y-6">
+            {/* Información básica de contacto */}
             <div className="bg-mercedario-cream/30 rounded-lg p-6">
               <h3 className="font-playfair text-xl font-semibold text-mercedario-brown mb-4">
                 {t('location.contactInfo')}
@@ -45,9 +47,9 @@ const LocationSection = () => {
                   <div>
                     <p className="font-semibold text-mercedario-brown">Dirección:</p>
                     <p className="text-mercedario-brown/80">
-                      Calle NO, con Avenida 11A<br />
-                      Maracaibo 4002, Zulia<br />
-                      Venezuela
+                      {parishInfo.address.street}<br />
+                      {parishInfo.address.city} {parishInfo.address.postalCode}, {parishInfo.address.state}<br />
+                      {parishInfo.address.country}
                     </p>
                   </div>
                 </div>
@@ -56,21 +58,27 @@ const LocationSection = () => {
                   <Phone className="h-6 w-6 text-mercedario-red flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-mercedario-brown">Teléfono:</p>
-                    <p className="text-mercedario-brown/80">0261-748-0485</p>
+                    <p className="text-mercedario-brown/80">{parishInfo.contact.phone}</p>
                   </div>
                 </div>
 
-
+                <div className="flex items-center space-x-3">
+                  <Clock className="h-6 w-6 text-mercedario-red flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-mercedario-brown">Horario de Oficina:</p>
+                    <p className="text-mercedario-brown/80">{parishInfo.contact.officeHours}</p>
+                  </div>
+                </div>
               </div>
             </div>
 
+            {/* Direcciones */}
             <div className="bg-mercedario-red/10 rounded-lg p-6 border border-mercedario-red/20">
               <h4 className="font-semibold text-mercedario-brown mb-2">
                 {t('location.directions')}
               </h4>
               <p className="text-mercedario-brown/80 text-sm">
-                La parroquia cuenta con estacionamiento disponible y está ubicada cerca del transporte público. 
-                Para llegar en transporte público, puedes tomar las rutas 45, 67 o 89 que paran a una cuadra de la parroquia.
+                {t('location.parking')}
               </p>
             </div>
           </div>
