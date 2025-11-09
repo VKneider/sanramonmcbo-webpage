@@ -23,71 +23,100 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-        {apostolado.image && (
-          <div className="w-full h-64 overflow-hidden rounded-lg mb-4">
-            <img 
-              src={apostolado.image} 
-              alt={apostolado.name}
-              className="w-full h-full object-cover"
-            />
+      <DialogContent className="w-[90vw] h-[85vh] max-w-none p-0 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 h-full overflow-hidden">
+          {/* Imagen */}
+          {apostolado.image && (
+            <div className="relative h-full min-h-[300px] lg:min-h-full">
+              <img 
+                src={apostolado.image} 
+                alt={apostolado.name}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
+          )}
+          
+          {/* Contenido */}
+          <div className="flex flex-col h-full overflow-y-auto p-6 lg:p-8">
+            <DialogHeader className="mb-6">
+              <DialogTitle className="text-3xl lg:text-4xl text-mercedario-red mb-3">
+                {apostolado.name}
+              </DialogTitle>
+              <DialogDescription className="text-base lg:text-lg text-muted-foreground">
+                {apostolado.description}
+              </DialogDescription>
+            </DialogHeader>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1">
+              {apostolado.ageRange && (
+                <div className="bg-mercedario-cream/50 p-4 rounded-lg border border-mercedario-red/10">
+                  <h4 className="font-semibold text-mercedario-red mb-2 flex items-center gap-2">
+                    <span className="text-lg">👥</span>
+                    {t('apostolados.ageRange')}
+                  </h4>
+                  <p className="text-foreground/80">{apostolado.ageRange}</p>
+                </div>
+              )}
+              
+              {apostolado.schedule && (
+                <div className="bg-mercedario-cream/50 p-4 rounded-lg border border-mercedario-red/10">
+                  <h4 className="font-semibold text-mercedario-red mb-2 flex items-center gap-2">
+                    <span className="text-lg">🕐</span>
+                    {t('apostolados.schedule')}
+                  </h4>
+                  <p className="text-foreground/80">{apostolado.schedule}</p>
+                </div>
+              )}
+              
+              {apostolado.location && (
+                <div className="bg-mercedario-cream/50 p-4 rounded-lg border border-mercedario-red/10">
+                  <h4 className="font-semibold text-mercedario-red mb-2 flex items-center gap-2">
+                    <span className="text-lg">📍</span>
+                    {t('apostolados.location')}
+                  </h4>
+                  <p className="text-foreground/80">{apostolado.location}</p>
+                </div>
+              )}
+              
+              {apostolado.contact && (
+                <div className="bg-mercedario-cream/50 p-4 rounded-lg border border-mercedario-red/10">
+                  <h4 className="font-semibold text-mercedario-red mb-2 flex items-center gap-2">
+                    <span className="text-lg">✉️</span>
+                    {t('apostolados.contact')}
+                  </h4>
+                  <p className="text-foreground/80">{apostolado.contact}</p>
+                </div>
+              )}
+              
+              {apostolado.requirements && (
+                <div className="bg-mercedario-cream/50 p-4 rounded-lg border border-mercedario-red/10 md:col-span-2">
+                  <h4 className="font-semibold text-mercedario-red mb-2 flex items-center gap-2">
+                    <span className="text-lg">📋</span>
+                    {t('apostolados.requirements')}
+                  </h4>
+                  <p className="text-foreground/80">{apostolado.requirements}</p>
+                </div>
+              )}
+              
+              {apostolado.activities && apostolado.activities.length > 0 && (
+                <div className="bg-mercedario-cream/50 p-4 rounded-lg border border-mercedario-red/10 md:col-span-2">
+                  <h4 className="font-semibold text-mercedario-red mb-3 flex items-center gap-2">
+                    <span className="text-lg">✨</span>
+                    {t('apostolados.activities')}
+                  </h4>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {apostolado.activities.map((activity, index) => (
+                      <li key={index} className="flex items-start gap-2 text-foreground/80">
+                        <span className="text-mercedario-red mt-1">•</span>
+                        <span>{activity}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
-        )}
-        <DialogHeader>
-          <DialogTitle className="text-2xl text-red-800 mb-2">
-            {apostolado.name}
-          </DialogTitle>
-          <DialogDescription className="text-gray-600 text-base">
-            {apostolado.description}
-          </DialogDescription>
-        </DialogHeader>
-        
-        <div className="space-y-4 mt-4">
-          {apostolado.ageRange && (
-            <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.ageRange')}</h4>
-              <p className="text-gray-700">{apostolado.ageRange}</p>
-            </div>
-          )}
-          
-          {apostolado.schedule && (
-            <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.schedule')}</h4>
-              <p className="text-gray-700">{apostolado.schedule}</p>
-            </div>
-          )}
-          
-          {apostolado.location && (
-            <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.location')}</h4>
-              <p className="text-gray-700">{apostolado.location}</p>
-            </div>
-          )}
-          
-          {apostolado.activities && apostolado.activities.length > 0 && (
-            <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.activities')}</h4>
-              <ul className="list-disc list-inside text-gray-700 space-y-1">
-                {apostolado.activities.map((activity, index) => (
-                  <li key={index}>{activity}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-          
-          {apostolado.requirements && (
-            <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.requirements')}</h4>
-              <p className="text-gray-700">{apostolado.requirements}</p>
-            </div>
-          )}
-          
-          {apostolado.contact && (
-            <div>
-              <h4 className="font-semibold text-red-700 mb-1">{t('apostolados.contact')}</h4>
-              <p className="text-gray-700">{apostolado.contact}</p>
-            </div>
-          )}
         </div>
       </DialogContent>
     </Dialog>
