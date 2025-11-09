@@ -1,10 +1,31 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import ApostolCard, { Apostolado } from '../ApostolCard';
+import ApostolCard, { Apostolado, Coordinador } from '../ApostolCard';
 import ApostolModal from '../ApostolModal';
 
 interface ApostoladadosDetailProps {
   capillaId: string;
+}
+
+// Interfaz para los datos que vienen de las traducciones
+interface ApostolateTranslationData {
+  name: string;
+  description: string;
+  ageRange?: string;
+  schedule?: string;
+  location?: string;
+  activities?: string[];
+  requirements?: string;
+  contact?: string;
+  coordinadores?: Coordinador[];
+  activityImages?: string[];
+}
+
+interface ChapelTranslationData {
+  title: string;
+  apostolates: {
+    [key: string]: ApostolateTranslationData;
+  };
 }
 
 const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) => {
@@ -21,9 +42,9 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
 
   // Imágenes específicas para apostolados del templo San Ramón Nonato
   const temploApostoladoImages = {
-    choir: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop', // Coro con instrumentos musicales
-    lectores: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop', // Persona leyendo la Biblia
-    eucharisticMinisters: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?w=400&h=300&fit=crop' // Iglesia/altar
+    choir: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop',
+    lectores: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
+    eucharisticMinisters: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?w=400&h=300&fit=crop'
   };
 
   const handleMoreInfo = (apostolado: Apostolado) => {
@@ -39,7 +60,8 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
   // Obtener datos de la capilla seleccionada
   const getChapelData = () => {
     try {
-      const chapelData = t(`apostolados.chapelsList.${capillaId}`) as any;
+      const chapelData = t(`apostolados.chapelsList.${capillaId}`) as unknown as ChapelTranslationData;
+      
       if (!chapelData || typeof chapelData !== 'object' || !chapelData.apostolates) {
         return null;
       }
@@ -64,6 +86,7 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
           activities: apostolateData.activities,
           requirements: apostolateData.requirements,
           contact: apostolateData.contact,
+          coordinadores: apostolateData.coordinadores,
           activityImages: apostolateData.activityImages,
         } as Apostolado;
       });
@@ -73,6 +96,7 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
         apostolates
       };
     } catch (error) {
+      console.error('Error loading chapel data:', error);
       return null;
     }
   };

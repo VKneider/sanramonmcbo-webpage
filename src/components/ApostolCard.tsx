@@ -1,9 +1,16 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from '@/contexts/LanguageContext';
 
+// Nueva interfaz para coordinadores
+export interface Coordinador {
+  nombre: string;
+  email?: string;
+  telefono?: string;
+}
+
+// Interfaz actualizada de Apostolado
 export interface Apostolado {
   id: string;
   name: string;
@@ -14,7 +21,8 @@ export interface Apostolado {
   location?: string;
   activities?: string[];
   requirements?: string;
-  contact?: string;
+  contact?: string;  // Mantener para retrocompatibilidad
+  coordinadores?: Coordinador[];  // Nueva propiedad
   activityImages?: string[];
 }
 

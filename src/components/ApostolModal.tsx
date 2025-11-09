@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Dialog,
@@ -86,7 +85,33 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
                 </div>
               )}
               
-              {apostolado.contact && (
+              {/* NUEVA SECCIÓN: Coordinadores */}
+              {apostolado.coordinadores && apostolado.coordinadores.length > 0 ? (
+                <div className="bg-mercedario-cream/50 p-4 rounded-lg border border-mercedario-red/10">
+                  <h4 className="font-semibold text-mercedario-red mb-3 flex items-center gap-2">
+                    <span className="text-lg">👤</span>
+                    {apostolado.coordinadores.length > 1 ? 'Coordinadores' : 'Coordinador'}
+                  </h4>
+                  <div className="space-y-3">
+                    {apostolado.coordinadores.map((coordinador, idx) => (
+                      <div key={idx} className="border-l-2 border-mercedario-red/30 pl-3">
+                        <p className="font-medium text-foreground break-words">{coordinador.nombre}</p>
+                        {coordinador.email && (
+                          <p className="text-sm text-foreground/80 break-words overflow-wrap-anywhere">
+                            📧 {coordinador.email}
+                          </p>
+                        )}
+                        {coordinador.telefono && (
+                          <p className="text-sm text-foreground/80 break-words">
+                            📱 {coordinador.telefono}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : apostolado.contact ? (
+                // Fallback para apostolados con formato antiguo
                 <div className="bg-mercedario-cream/50 p-4 rounded-lg border border-mercedario-red/10">
                   <h4 className="font-semibold text-mercedario-red mb-2 flex items-center gap-2">
                     <span className="text-lg">✉️</span>
@@ -94,7 +119,7 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
                   </h4>
                   <p className="text-foreground/80 break-words overflow-wrap-anywhere">{apostolado.contact}</p>
                 </div>
-              )}
+              ) : null}
               
               {apostolado.requirements && (
                 <div className="bg-mercedario-cream/50 p-4 rounded-lg border border-mercedario-red/10 md:col-span-2">
@@ -122,34 +147,34 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
                   </ul>
                 </div>
               )}
-
-              {/* Carrusel de imágenes de actividades */}
-              {apostolado.activityImages && apostolado.activityImages.length > 0 && (
-                <div className="md:col-span-2 bg-mercedario-cream/50 p-4 rounded-lg border border-mercedario-red/10">
-                  <h4 className="font-semibold text-mercedario-red mb-4 flex items-center gap-2">
-                    <span className="text-lg">📸</span>
-                    {t('apostolados.activityGallery')}
-                  </h4>
-                  <Carousel className="w-full">
-                    <CarouselContent>
-                      {apostolado.activityImages.map((imgSrc, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2">
-                          <div className="relative aspect-video rounded-lg overflow-hidden">
-                            <img
-                              src={imgSrc}
-                              alt={`Actividad ${index + 1}`}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="left-2" />
-                    <CarouselNext className="right-2" />
-                  </Carousel>
-                </div>
-              )}
             </div>
+            
+            {/* Galería de actividades */}
+            {apostolado.activityImages && apostolado.activityImages.length > 0 && (
+              <div className="mt-6">
+                <h4 className="font-semibold text-mercedario-red mb-4 flex items-center gap-2">
+                  <span className="text-lg">📸</span>
+                  {t('apostolados.activityGallery')}
+                </h4>
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {apostolado.activityImages.map((image, index) => (
+                      <CarouselItem key={index}>
+                        <div className="relative w-full h-64 rounded-lg overflow-hidden">
+                          <img 
+                            src={image} 
+                            alt={`Actividad ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
+            )}
           </div>
         </div>
       </DialogContent>
