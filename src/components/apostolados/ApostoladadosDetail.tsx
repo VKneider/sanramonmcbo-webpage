@@ -63,7 +63,8 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
           location: apostolateData.location,
           activities: apostolateData.activities,
           requirements: apostolateData.requirements,
-          contact: apostolateData.contact
+          contact: apostolateData.contact,
+          activityImages: apostolateData.activityImages,
         } as Apostolado;
       });
 

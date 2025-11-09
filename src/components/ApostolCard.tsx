@@ -15,6 +15,7 @@ export interface Apostolado {
   activities?: string[];
   requirements?: string;
   contact?: string;
+  activityImages?: string[];
 }
 
 interface ApostolCardProps {

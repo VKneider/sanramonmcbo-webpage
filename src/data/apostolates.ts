@@ -12,7 +12,12 @@ export const apostolates = {
         activities: ["Canto litúrgico", "Ensayos semanales", "Celebraciones especiales"],
         requirements: "Gusto por la música y el canto",
         contact: "coro@sanramonnnonato.org",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+        activityImages: [
+          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1464979681340-bdd28a36fc24?w=600&h=400&fit=crop"
+        ]
       },
       lectores: {
         name: "Ministerio de Lectores",
@@ -23,7 +28,11 @@ export const apostolates = {
         activities: ["Proclamación de lecturas", "Formación bíblica", "Preparación litúrgica"],
         requirements: "Buena dicción y conocimiento básico bíblico",
         contact: "lectores@sanramonnnonato.org",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+        activityImages: [
+          "https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop"
+        ]
       },
       eucharisticMinisters: {
         name: "Ministros Extraordinarios de la Eucaristía",
@@ -50,7 +59,12 @@ export const apostolates = {
         activities: ["Oración del rosario de la misericordia", "Visitas a enfermos", "Catequesis de confirmación"],
         requirements: "Jóvenes bautizados",
         contact: "juventud.misericordia@sanramonnnonato.org",
-        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
+        activityImages: [
+          "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=400&fit=crop"
+        ]
       },
       adorationGroup: {
         name: "Adoradores de la Divina Misericordia",
