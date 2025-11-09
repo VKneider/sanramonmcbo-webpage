@@ -43,7 +43,12 @@ export const apostolates = {
         activities: ["Distribución de la Comunión", "Visita a enfermos", "Formación litúrgica"],
         requirements: "Confirmados, vida cristiana ejemplar",
         contact: "ministers@sanramonnnonato.org",
-        image: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=400&h=300&fit=crop",
+        activityImages: [
+          "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1509672519578-3bca9706c5fe?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1516450137517-162bfbeb8dba?w=600&h=400&fit=crop"
+        ]
       }
     }
   },
@@ -75,7 +80,11 @@ export const apostolates = {
         activities: ["Adoración eucarística", "Oración contemplativa", "Lectio divina"],
         requirements: "Personas bautizadas y confirmadas",
         contact: "adoracion.misericordia@sanramonnnonato.org",
-        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
+        activityImages: [
+          "https://images.unsplash.com/photo-1509021436665-aa0e8165d3c8?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=400&fit=crop"
+        ]
       }
     }
   },
@@ -91,7 +100,12 @@ export const apostolates = {
         activities: ["Visitas domiciliarias", "Oración del rosario", "Apostolado mariano"],
         requirements: "Católicos practicantes",
         contact: "legion.maria@sanramonnnonato.org",
-        image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=400&h=300&fit=crop",
+        activityImages: [
+          "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=600&h=400&fit=crop"
+        ]
       },
       liturgicalChoir: {
         name: "Coro Litúrgico Mercedario",
@@ -102,7 +116,11 @@ export const apostolates = {
         activities: ["Ensayos de canto", "Animación litúrgica", "Festivales religiosos"],
         requirements: "Gusto por la música sacra",
         contact: "coro.mercedario@sanramonnnonato.org",
-        image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=400&h=300&fit=crop",
+        activityImages: [
+          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=600&h=400&fit=crop"
+        ]
       }
     }
   },
@@ -118,7 +136,12 @@ export const apostolates = {
         activities: ["Distribución de alimentos", "Apoyo a necesitados", "Obras de misericordia"],
         requirements: "Espíritu de servicio",
         contact: "caritas.sanpedro@sanramonnnonato.org",
-        image: "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=400&h=300&fit=crop",
+        activityImages: [
+          "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&h=400&fit=crop"
+        ]
       },
       catechism: {
         name: "Catequesis Familiar",
@@ -129,7 +152,11 @@ export const apostolates = {
         activities: ["Catequesis familiar", "Preparación sacramental", "Retiros familiares"],
         requirements: "Familias católicas",
         contact: "catequesis.sanpedro@sanramonnnonato.org",
-        image: "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=400&h=300&fit=crop",
+        activityImages: [
+          "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=600&h=400&fit=crop"
+        ]
       }
     }
   },
@@ -145,7 +172,12 @@ export const apostolates = {
         activities: ["Oración contemplativa", "Retiros silenciosos", "Meditación en la naturaleza"],
         requirements: "Experiencia en oración",
         contact: "contemplacion.carmen@sanramonnnonato.org",
-        image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop"
+        image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop",
+        activityImages: [
+          "https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+          "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop"
+        ]
       }
     }
   }
