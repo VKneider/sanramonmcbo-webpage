@@ -1,7 +1,7 @@
 
 import { Church, MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { parishInfo } from '@/data/parishInfo';
+import { parishInfo } from '@/data';
 
 const Footer = () => {
   const { t } = useLanguage();

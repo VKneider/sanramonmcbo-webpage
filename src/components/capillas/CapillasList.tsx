@@ -2,6 +2,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import CapillaCard from './CapillaCard';
 import { Church } from 'lucide-react';
+import { chapelCardImages } from '@/data/static/chapels';
 
 interface CapillasListProps {
   filtroCapilla: string;
@@ -18,7 +19,7 @@ const CapillasList = ({ filtroCapilla }: CapillasListProps) => {
       historia: t('capillas.chapelsList.divinaMisericordia.history'),
       horarios: t('capillas.chapelsList.divinaMisericordia.schedules'),
       ubicacion: t('capillas.chapelsList.divinaMisericordia.location'),
-      imagen: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      imagen: chapelCardImages.divinaMisericordia
     },
     {
       id: 'nuestraSeñoraMerced',
@@ -27,7 +28,7 @@ const CapillasList = ({ filtroCapilla }: CapillasListProps) => {
       historia: t('capillas.chapelsList.nuestraSeñoraMerced.history'),
       horarios: t('capillas.chapelsList.nuestraSeñoraMerced.schedules'),
       ubicacion: t('capillas.chapelsList.nuestraSeñoraMerced.location'),
-      imagen: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      imagen: chapelCardImages.nuestraSeñoraMerced
     },
     {
       id: 'sanPedroNolasco',
@@ -36,7 +37,7 @@ const CapillasList = ({ filtroCapilla }: CapillasListProps) => {
       historia: t('capillas.chapelsList.sanPedroNolasco.history'),
       horarios: t('capillas.chapelsList.sanPedroNolasco.schedules'),
       ubicacion: t('capillas.chapelsList.sanPedroNolasco.location'),
-      imagen: 'https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      imagen: chapelCardImages.sanPedroNolasco
     },
     {
       id: 'ermitaCarmen',
@@ -45,7 +46,7 @@ const CapillasList = ({ filtroCapilla }: CapillasListProps) => {
       historia: t('capillas.chapelsList.ermitaCarmen.history'),
       horarios: t('capillas.chapelsList.ermitaCarmen.schedules'),
       ubicacion: t('capillas.chapelsList.ermitaCarmen.location'),
-      imagen: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      imagen: chapelCardImages.ermitaCarmen
     }
   ];
 

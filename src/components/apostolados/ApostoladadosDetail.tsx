@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ApostolCard, { Apostolado, Coordinador } from '../ApostolCard';
 import ApostolModal from '../ApostolModal';
+import { chapelImages } from '@/data/static/chapels';
+import { temploApostoladoImages } from '@/data/static/apostolados';
 
 interface ApostoladadosDetailProps {
   capillaId: string;
@@ -33,19 +35,7 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
   const [selectedApostolado, setSelectedApostolado] = useState<Apostolado | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const chapelImages = {
-    divinaMisericordia: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop',
-    nuestraSeñoraMerced: 'https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=400&h=300&fit=crop',
-    sanPedroNolasco: 'https://images.unsplash.com/photo-1473091534298-04dcbce3278c?w=400&h=300&fit=crop',
-    ermitaCarmen: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop'
-  };
-
-  // Imágenes específicas para apostolados del templo San Ramón Nonato
-  const temploApostoladoImages = {
-    choir: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop',
-    lectores: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
-    eucharisticMinisters: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?w=400&h=300&fit=crop'
-  };
+  
 
   const handleMoreInfo = (apostolado: Apostolado) => {
     setSelectedApostolado(apostolado);

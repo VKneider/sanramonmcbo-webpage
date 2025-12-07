@@ -1,0 +1,92 @@
+export const galleryPhotos = [
+  {
+    src: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81',
+    isVertical: false,
+    altKey: 'gallery.photos.sundayMass',
+    captionKey: 'gallery.photos.sundayMassCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb',
+    isVertical: true,
+    altKey: 'gallery.photos.nightAdoration',
+    captionKey: 'gallery.photos.nightAdorationCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21',
+    isVertical: false,
+    altKey: 'gallery.photos.baptismCelebration',
+    captionKey: 'gallery.photos.baptismCelebrationCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1523712999610-f77fbcfc3843',
+    isVertical: false,
+    altKey: 'gallery.photos.natureRetreat',
+    captionKey: 'gallery.photos.natureRetreatCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1500673922987-e212871fec22',
+    isVertical: true,
+    altKey: 'gallery.photos.procession',
+    captionKey: 'gallery.photos.processionCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
+    isVertical: false,
+    altKey: 'gallery.photos.youthPrayer',
+    captionKey: 'gallery.photos.youthPrayerCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901',
+    isVertical: false,
+    altKey: 'gallery.photos.choirRehearsal',
+    captionKey: 'gallery.photos.choirRehearsalCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04',
+    isVertical: true,
+    altKey: 'gallery.photos.catechesisClass',
+    captionKey: 'gallery.photos.catechesisClassCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1544568100-847a948585b9',
+    isVertical: false,
+    altKey: 'gallery.photos.communityPrayer',
+    captionKey: 'gallery.photos.communityPrayerCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07',
+    isVertical: true,
+    altKey: 'gallery.photos.holyWeek',
+    captionKey: 'gallery.photos.holyWeekCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1559251606-c623743a6d76',
+    isVertical: false,
+    altKey: 'gallery.photos.firstCommunion',
+    captionKey: 'gallery.photos.firstCommunionCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c',
+    isVertical: false,
+    altKey: 'gallery.photos.confirmation',
+    captionKey: 'gallery.photos.confirmationCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1511895426328-dc8714191300',
+    isVertical: true,
+    altKey: 'gallery.photos.familyPastoral',
+    captionKey: 'gallery.photos.familyPastoralCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1512389142860-9c449e58a543',
+    isVertical: false,
+    altKey: 'gallery.photos.christmas',
+    captionKey: 'gallery.photos.christmasCaption',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1593113598332-cd288d649433',
+    isVertical: false,
+    altKey: 'gallery.photos.volunteer',
+    captionKey: 'gallery.photos.volunteerCaption',
+  },
+];

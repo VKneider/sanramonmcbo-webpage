@@ -1,6 +1,6 @@
 import { Building, MessageCircle, Phone, Clock, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { parishInfo } from '@/data/parishInfo';
+import { parishInfo } from '@/data';
 
 const ContactSection = () => {
   const { t } = useLanguage();

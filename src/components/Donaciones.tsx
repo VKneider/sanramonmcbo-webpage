@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useToast } from '@/hooks/use-toast';
-import { donations } from '@/data/donations';
+import { donations } from '@/data';
 
 const Donaciones = () => {
   const { t } = useLanguage();
