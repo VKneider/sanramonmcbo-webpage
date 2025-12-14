@@ -15,7 +15,11 @@ export const aboutUsTranslations = {
       community: "Comunidad",
       communityDesc: "Construimos una comunidad fraterna donde cada persona encuentra su lugar y puede crecer en la fe y el servicio.",
       missionTitle: "Nuestra Misión",
-      missionText: "Ser una comunidad parroquial que vive y anuncia el Evangelio con el carisma mercedario, promoviendo la liberación integral de la persona humana, especialmente de los más vulnerables, a través de la oración, la evangelización y el servicio caritativo."
+      missionText: "Ser una comunidad parroquial que vive y anuncia el Evangelio con el carisma mercedario, promoviendo la liberación integral de la persona humana, especialmente de los más vulnerables, a través de la oración, la evangelización y el servicio caritativo.",
+      founderTitle: "San Pedro Nolasco",
+      founderDesc: "Fundador de la Orden de la Merced. En 1218, inspirado por la Virgen María, estableció la orden para la redención de los cristianos cautivos. Su vida fue un testimonio de libertad, caridad y entrega absoluta al prójimo, dejando un legado que perdura tras más de 800 años.",
+      patronTitle: "Nuestra Madre de la Merced",
+      patronDesc: "Madre y Generala de la Orden. La Santísima Virgen se apareció a San Pedro Nolasco para encomendarle la misión liberadora. Bajo su amparo, los mercedarios realizan su cuarto voto de dar la vida si es necesario por la libertad de los cautivos."
     }
   },
   en: {
@@ -33,7 +37,11 @@ export const aboutUsTranslations = {
       community: "Community",
       communityDesc: "We build a fraternal community where each person finds their place and can grow in faith and service.",
       missionTitle: "Our Mission",
-      missionText: "To be a parish community that lives and proclaims the Gospel with the Mercedarian charism, promoting the integral liberation of the human person, especially the most vulnerable, through prayer, evangelization and charitable service."
+      missionText: "To be a parish community that lives and proclaims the Gospel with the Mercedarian charism, promoting the integral liberation of the human person, especially the most vulnerable, through prayer, evangelization and charitable service.",
+      founderTitle: "Saint Peter Nolasco",
+      founderDesc: "Founder of the Order of Mercy. In 1218, inspired by the Virgin Mary, he established the order for the redemption of Christian captives. His life was a testament to freedom, charity, and absolute dedication to others, leaving a legacy that endures after more than 800 years.",
+      patronTitle: "Our Lady of Mercy",
+      patronDesc: "Mother and General of the Order. The Blessed Virgin appeared to Saint Peter Nolasco to entrust him with the liberating mission. Under her protection, Mercedarians make their fourth vow to give their lives if necessary for the freedom of captives."
     }
   }
 };

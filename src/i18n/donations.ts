@@ -12,7 +12,7 @@ export const donationsTranslations = {
       phoneNumber: 'Número de teléfono',
       copied: 'Copiado al portapapeles',
       otherMethods: 'Otras formas de donar',
-      otherMethodsDescription: 'También puedes hacer tu donación en persona en cualquiera de nuestras capillas o durante las misas dominicales.',
+      otherMethodsDescription: 'Campaña Dona Amor a San Ramón',
       gratitude: 'Que Dios bendiga tu generosidad y multiplique tus bendiciones'
     }
   },
@@ -29,7 +29,7 @@ export const donationsTranslations = {
       phoneNumber: 'Phone number',
       copied: 'Copied to clipboard',
       otherMethods: 'Other ways to donate',
-      otherMethodsDescription: 'You can also make your donation in person at any of our chapels or during Sunday masses.',
+      otherMethodsDescription: 'Donate to San Ramon Charity',
       gratitude: 'May God bless your generosity and multiply your blessings'
     }
   }

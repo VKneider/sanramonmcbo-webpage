@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from '@/components/ui/card';
-import { Heart, Users, Cross } from 'lucide-react';
+import { Heart, Users, Cross, Crown, ScrollText } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const QuienesSomos = () => {
@@ -91,6 +91,28 @@ const QuienesSomos = () => {
           <p className="text-lg text-mercedario-brown/80 text-center leading-relaxed max-w-4xl mx-auto">
             "{t('aboutUs.missionText')}"
           </p>
+        </div>
+
+        <div className="mt-16 grid md:grid-cols-2 gap-12">
+          <div className="bg-mercedario-white p-8 rounded-lg shadow-md border-l-4 border-mercedario-red animate-fade-in hover:shadow-xl transition-shadow duration-300">
+            <h3 className="font-playfair text-2xl font-bold text-mercedario-brown mb-4 flex items-center gap-3">
+              <ScrollText className="h-8 w-8 text-mercedario-red" />
+              {t('aboutUs.founderTitle')}
+            </h3>
+            <p className="text-mercedario-brown/80 leading-relaxed text-lg">
+              {t('aboutUs.founderDesc')}
+            </p>
+          </div>
+
+          <div className="bg-mercedario-white p-8 rounded-lg shadow-md border-l-4 border-mercedario-gold animate-fade-in hover:shadow-xl transition-shadow duration-300">
+            <h3 className="font-playfair text-2xl font-bold text-mercedario-brown mb-4 flex items-center gap-3">
+              <Crown className="h-8 w-8 text-mercedario-gold" />
+              {t('aboutUs.patronTitle')}
+            </h3>
+            <p className="text-mercedario-brown/80 leading-relaxed text-lg">
+              {t('aboutUs.patronDesc')}
+            </p>
+          </div>
         </div>
       </div>
     </section>

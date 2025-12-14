@@ -3,7 +3,7 @@ export const footerTranslations = {
   es: {
     footer: {
       description: "Una comunidad católica guiada por el carisma mercedario, comprometida con la liberación y el servicio a los más necesitados.",
-      motto: "Bendito sea Dios Padre de misericordias",
+      motto: "Libres para Liberar",
       contact: "Contacto",
       schedule: "Horarios",
       sundayMasses: "Misas Dominicales:",
@@ -15,7 +15,7 @@ export const footerTranslations = {
   en: {
     footer: {
       description: "A Catholic community guided by the Mercedarian charism, committed to liberation and service to those most in need.",
-      motto: "Blessed be God, Father of mercies",
+      motto: "Free to Liberate",
       contact: "Contact",
       schedule: "Schedule",
       sundayMasses: "Sunday Masses:",

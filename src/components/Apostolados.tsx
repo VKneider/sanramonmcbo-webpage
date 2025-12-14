@@ -32,28 +32,6 @@ const Apostolados: React.FC = () => {
 
       {/* Detalle de apostolados por capilla */}
       <ApostoladadosDetail capillaId={selectedChapel} />
-
-      {/* Sección de contacto */}
-      <section className="py-16 bg-white animate-fade-in">
-        <div className="container mx-auto px-4">
-          <div className="text-center animate-slide-in">
-            <div className="bg-mercedario-cream rounded-lg p-8 shadow-sm max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-mercedario-red mb-4">
-                {t('apostolados.joinUs')}
-              </h3>
-              <p className="text-gray-700 mb-6">
-                {t('apostolados.joinUsDescription')}
-              </p>
-              <div className="space-y-2 text-sm text-gray-600">
-                <p><strong>{t('apostolados.contactInfo')}:</strong></p>
-                <p>📧 info@sanramonnnonato.org</p>
-                <p>📞 (555) 123-4567</p>
-                <p>🕐 {t('apostolados.officeHours')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

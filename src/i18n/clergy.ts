@@ -7,14 +7,18 @@ export const clergyTranslations = {
       vicar: "Vicario Parroquial",
       priests: {
         parroco: {
-          name: "P. [Nombre del Párroco]",
+          name: "P. Ponç Capell",
           title: "Párroco",
-          photo: "/placeholder.svg"
+          period: "2023 - Presente",
+          photo: "/placeholder.svg",
+          visible: "true"
         },
         vicario: {
           name: "P. [Nombre del Vicario]", 
           title: "Vicario Parroquial",
-          photo: "/placeholder.svg"
+          period: "2023 - Presente",
+          photo: "/placeholder.svg",
+          visible: "false"
         }
       }
     }
@@ -29,12 +33,16 @@ export const clergyTranslations = {
         parroco: {
           name: "Fr. [Parish Priest Name]",
           title: "Parish Priest", 
-          photo: "/placeholder.svg"
+          period: "2023 - Present",
+          photo: "/placeholder.svg",
+          visible: "true"
         },
         vicario: {
           name: "Fr. [Vicar Name]",
           title: "Parochial Vicar",
-          photo: "/placeholder.svg"
+          period: "2023 - Present",
+          photo: "/placeholder.svg",
+          visible: "false"
         }
       }
     }

@@ -146,12 +146,13 @@ const Donaciones = () => {
             <h3 className="font-playfair text-xl font-semibold text-mercedario-brown mb-2">
               {t('donations.otherMethods')}
             </h3>
-            <p className="text-mercedario-brown/70 mb-4">
-              {t('donations.otherMethodsDescription')}
-            </p>
-            <p className="text-sm text-mercedario-brown/60 italic">
-              "{t('donations.gratitude')}"
-            </p>
+            <div className="mt-4">
+              <Button asChild className="bg-mercedario-gold hover:bg-mercedario-brown text-white shadow-md hover:shadow-lg transition-all duration-300">
+                <a href={donations.otherMethods.url} target="_blank" rel="noopener noreferrer">
+                  {t('donations.otherMethodsDescription')}
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

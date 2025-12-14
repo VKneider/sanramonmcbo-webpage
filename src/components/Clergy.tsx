@@ -10,15 +10,19 @@ const Clergy: React.FC = () => {
       id: 'parroco',
       name: t('clergy.priests.parroco.name'),
       title: t('clergy.priests.parroco.title'),
-      photo: t('clergy.priests.parroco.photo')
+      period: t('clergy.priests.parroco.period'),
+      photo: t('clergy.priests.parroco.photo'),
+      visible: t('clergy.priests.parroco.visible')
     },
     {
       id: 'vicario',
       name: t('clergy.priests.vicario.name'),
       title: t('clergy.priests.vicario.title'),
-      photo: t('clergy.priests.vicario.photo')
+      period: t('clergy.priests.vicario.period'),
+      photo: t('clergy.priests.vicario.photo'),
+      visible: t('clergy.priests.vicario.visible')
     }
-  ];
+  ].filter(priest => priest.visible !== 'false');
 
   return (
     <section className="py-16 bg-mercedario-white">
@@ -32,7 +36,7 @@ const Clergy: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className={`grid ${priests.length === 1 ? 'grid-cols-1 max-w-md' : 'md:grid-cols-2 max-w-4xl'} gap-8 mx-auto`}>
           {priests.map((priest, index) => (
             <Card 
               key={priest.id}
@@ -61,6 +65,12 @@ const Clergy: React.FC = () => {
                 <p className="text-mercedario-brown font-medium">
                   {priest.title}
                 </p>
+                
+                {priest.period && (
+                  <p className="text-mercedario-brown/80 text-sm mt-1">
+                    {priest.period}
+                  </p>
+                )}
               </CardContent>
             </Card>
           ))}
