@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const XLSX = require('xlsx');
+const https = require('https');
 
 /*
 INSTRUCCIONES PARA CONFIGURAR IMÁGENES DE GOOGLE DRIVE:
@@ -198,7 +199,7 @@ function convertCSVToApostolateData(csvData) {
 }
 
 // Función principal
-function main() {
+async function main() {
   try {
     console.log('🚀 Procesando Excel de apostolados...');
 
@@ -239,8 +240,9 @@ export type ChapelInfo = typeof chapelInfo;
     fs.writeFileSync(path.join(chapelDir, 'info.ts'), infoContent, 'utf-8');
     console.log(`  ✅ Creado: ${chapelKey}/info.ts`);
 
-    // Procesar cada apostolado del Excel
-    excelData.forEach((row, index) => {
+    // Procesar cada apostolado del Excel (secuencialmente para evitar sobrecargar la API)
+    for (let index = 0; index < excelData.length; index++) {
+      const row = excelData[index];
       const apostolateName = row['Nombre del Apostolado'] || `apostolate_${index + 1}`;
       const fileName = `${slugifyApostolateName(apostolateName)}.ts`;
 
@@ -303,13 +305,22 @@ export type ChapelInfo = typeof chapelInfo;
         esData.image = convertToThumbnail(row['Foto de portada del apostolado']);
       }
 
-      // Crear versión en inglés (simplificada)
-      const enData = {
-        ...esData,
-        name: esData.name, // Aquí podrías agregar traducción automática
-        description: esData.description, // Aquí podrías agregar traducción automática
-        activities: esData.activities // Aquí podrías agregar traducción automática
-      };
+      // Traducir automáticamente al inglés
+      console.log(`🔄 Traduciendo: ${esData.name}`);
+      const enData = await translateObject({
+        name: esData.name,
+        description: esData.description,
+        ageRange: esData.ageRange,
+        schedule: esData.schedule,
+        location: esData.location,
+        activities: esData.activities,
+        requirements: esData.requirements,
+        coordinadores: esData.coordinadores,
+        activityImages: esData.activityImages,
+        image: esData.image
+      });
+
+      console.log(`✅ Traducción completada: ${enData.name}`);
 
       // Crear objeto con datos del apostolado
       const apostolateData = {
@@ -328,7 +339,12 @@ export type ApostolateData = typeof apostolateData;
       fs.writeFileSync(filePath, fileContent, 'utf-8');
 
       console.log(`  ✅ Creado: ${chapelKey}/${fileName}`);
-    });
+
+      // Pequeño delay para no sobrecargar la API gratuita
+      if (index < excelData.length - 1) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
+    }
 
     // Generar archivo index.ts automáticamente
     generateIndexFile(chapelKey, excelData);
@@ -409,9 +425,80 @@ function camelCaseFromSlug(slug) {
     .join('');
 }
 
+// Función para traducir texto usando MyMemory API gratuita (sin API key requerida)
+function translateText(text, from = 'es', to = 'en') {
+  return new Promise((resolve, reject) => {
+    if (!text || typeof text !== 'string' || text.trim() === '') {
+      resolve(text);
+      return;
+    }
+
+    // Codificar el texto para URL
+    const encodedText = encodeURIComponent(text);
+    const url = `https://api.mymemory.translated.net/get?q=${encodedText}&langpair=${from}|${to}`;
+
+    https.get(url, (res) => {
+      let data = '';
+
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      res.on('end', () => {
+        try {
+          const response = JSON.parse(data);
+          if (response.responseData && response.responseData.translatedText) {
+            resolve(response.responseData.translatedText);
+          } else {
+            console.warn(`⚠️  Error en traducción MyMemory: ${JSON.stringify(response)}`);
+            resolve(text); // Fallback al texto original
+          }
+        } catch (error) {
+          console.warn(`⚠️  Error parseando respuesta MyMemory: ${error.message}`);
+          resolve(text); // Fallback al texto original
+        }
+      });
+    }).on('error', (error) => {
+      console.warn(`⚠️  Error en API MyMemory: ${error.message}`);
+      resolve(text); // Fallback al texto original
+    }).setTimeout(15000, () => {
+      console.warn(`⚠️  Timeout en traducción MyMemory`);
+      resolve(text); // Fallback al texto original
+    });
+  });
+}
+
+// Función para traducir un objeto completo recursivamente
+async function translateObject(obj, from = 'es', to = 'en') {
+  if (typeof obj === 'string') {
+    return await translateText(obj, from, to);
+  }
+
+  if (Array.isArray(obj)) {
+    const translatedArray = [];
+    for (const item of obj) {
+      translatedArray.push(await translateObject(item, from, to));
+    }
+    return translatedArray;
+  }
+
+  if (obj && typeof obj === 'object') {
+    const translatedObj = {};
+    for (const [key, value] of Object.entries(obj)) {
+      translatedObj[key] = await translateObject(value, from, to);
+    }
+    return translatedObj;
+  }
+
+  return obj;
+}
+
 // Ejecutar si se llama directamente
 if (require.main === module) {
-  main();
+  main().catch(error => {
+    console.error('❌ Error fatal:', error);
+    process.exit(1);
+  });
 }
 
 module.exports = { parseExcel, convertCSVToApostolateData };

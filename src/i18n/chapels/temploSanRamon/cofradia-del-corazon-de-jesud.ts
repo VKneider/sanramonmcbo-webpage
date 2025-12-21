@@ -23,13 +23,13 @@ export const apostolateData = {
     "image": "https://lh3.googleusercontent.com/d/1p3xo2dKBdIXvYxMdMo5XvwBY1uCfYBjH"
   },
   "en": {
-    "name": "Cofradía del Corazón de Jesúd",
-    "description": "Es un apostolado de servicio",
-    "ageRange": "Adultos",
-    "schedule": "Viernes Eucaristía de 5 pm",
+    "name": "Brotherhood of the Heart of Jesus",
+    "description": "It is an apostolate of service",
+    "ageRange": "Adults",
+    "schedule": "Friday 5pm Eucharist",
     "location": "San Ramón Nonato",
     "activities": [
-      "Formación, asistencia y servicio Eucarístico"
+      "Eucharistic Formation, Assistance and Service"
     ],
     "coordinadores": [
       {
@@ -37,7 +37,7 @@ export const apostolateData = {
         "telefono": "04146102620"
       },
       {
-        "nombre": "Eleonor Hernández"
+        "nombre": "Eleonor Hernandez"
       }
     ],
     "activityImages": [
