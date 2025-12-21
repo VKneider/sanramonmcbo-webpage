@@ -1,6 +1,5 @@
 
 import { Button } from '@/components/ui/button';
-import { Church } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
@@ -16,8 +15,12 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
-        <div className="mb-8">
-          <Church className="h-16 w-16 text-mercedario-white mx-auto mb-4" />
+        <div className="mb-0">
+          <img
+            src="/favicon.svg"
+            alt="Iglesia San Ramón Nonato"
+            className="size-32 text-mercedario-gold mx-auto"
+          />
         </div>
         
         <h1 className="font-playfair text-5xl md:text-7xl font-bold text-mercedario-white mb-6 leading-tight">

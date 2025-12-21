@@ -13,12 +13,14 @@ interface ChapelFilterProps {
   filtroCapilla: string;
   setFiltroCapilla: (capilla: string) => void;
   translationPrefix: 'apostolados' | 'capillas';
+  validChapels?: string[];
 }
 
 const ChapelFilter: React.FC<ChapelFilterProps> = ({
   filtroCapilla,
   setFiltroCapilla,
-  translationPrefix
+  translationPrefix,
+  validChapels
 }) => {
   const { t } = useLanguage();
 
@@ -28,7 +30,10 @@ const ChapelFilter: React.FC<ChapelFilterProps> = ({
     key: chapelId
   }));
 
-  const capillas = availableChapels;
+  // Filtrar capillas válidas si se especifican
+  const capillas = validChapels
+    ? availableChapels.filter(capilla => validChapels.includes(capilla.id))
+    : availableChapels;
 
   return (
     <section className="py-8 bg-white">

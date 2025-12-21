@@ -127,7 +127,7 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
               {chapelData.title}
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Apostolados y ministerios de {chapelData.title}
+              {t('apostolados.subtitle')} {chapelData.title}
             </p>
           </div>
           

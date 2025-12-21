@@ -23,9 +23,9 @@ export const apostolateData = {
       }
     ],
     "activityImages": [
-      "https://lh3.googleusercontent.com/d/1ute_uXAOGHpSelniTRYJepI6AXcxjouP"
+      "/images/apostolados/activity_1ute_uXAOGHpSelniTRYJepI6AXcxjouP_0.jpg"
     ],
-    "image": "https://lh3.googleusercontent.com/d/1cPHQtG2C38zWW0AwMbhDFA0EsCB6IoIG"
+    "image": "/images/apostolados/main_1cPHQtG2C38zWW0AwMbhDFA0EsCB6IoIG_0.jpg"
   },
   "en": {
     "name": "San Ramón Nonato Children's Choir",
@@ -51,9 +51,9 @@ export const apostolateData = {
       }
     ],
     "activityImages": [
-      "https://lh3.googleusercontent.com/d/1ute_uXAOGHpSelniTRYJepI6AXcxjouP"
+      "/images/apostolados/activity_1ute_uXAOGHpSelniTRYJepI6AXcxjouP_0.jpg"
     ],
-    "image": "https://lh3.googleusercontent.com/d/1cPHQtG2C38zWW0AwMbhDFA0EsCB6IoIG"
+    "image": "/images/apostolados/main_1cPHQtG2C38zWW0AwMbhDFA0EsCB6IoIG_0.jpg"
   }
 };
 

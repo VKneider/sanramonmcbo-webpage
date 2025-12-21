@@ -18,9 +18,9 @@ export const apostolateData = {
       }
     ],
     "activityImages": [
-      "https://lh3.googleusercontent.com/d/1sVUtxEWFtMXSFNmcutIEiClZ4D3xfFb7"
+      "/images/apostolados/activity_1sVUtxEWFtMXSFNmcutIEiClZ4D3xfFb7_0.jpg"
     ],
-    "image": "https://lh3.googleusercontent.com/d/1p3xo2dKBdIXvYxMdMo5XvwBY1uCfYBjH"
+    "image": "/images/apostolados/main_1p3xo2dKBdIXvYxMdMo5XvwBY1uCfYBjH_0.jpg"
   },
   "en": {
     "name": "Brotherhood of the Heart of Jesus",
@@ -41,9 +41,9 @@ export const apostolateData = {
       }
     ],
     "activityImages": [
-      "https://lh3.googleusercontent.com/d/1sVUtxEWFtMXSFNmcutIEiClZ4D3xfFb7"
+      "/images/apostolados/activity_1sVUtxEWFtMXSFNmcutIEiClZ4D3xfFb7_0.jpg"
     ],
-    "image": "https://lh3.googleusercontent.com/d/1p3xo2dKBdIXvYxMdMo5XvwBY1uCfYBjH"
+    "image": "/images/apostolados/main_1p3xo2dKBdIXvYxMdMo5XvwBY1uCfYBjH_0.jpg"
   }
 };
 

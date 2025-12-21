@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Church } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggle from './LanguageToggle';
@@ -26,7 +26,11 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <Church className="h-8 w-8 text-mercedario-gold" />
+            <img
+              src="/favicon.svg"
+              alt="Iglesia San Ramón Nonato"
+              className="h-8 w-8 text-mercedario-gold"
+            />
             <div className="flex flex-col">
               <span className="font-playfair font-bold text-lg text-mercedario-white">San Ramón Nonato</span>
               <span className="text-xs text-mercedario-gold -mt-1">{t('navigation.parish')}</span>

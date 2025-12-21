@@ -40,9 +40,79 @@ function slugifyApostolateName(name) {
 }
 
 // Función para convertir URLs de Google Drive a imagen completa
+// Función para descargar y guardar imágenes localmente
+async function downloadAndSaveImage(url, fileName) {
+  return new Promise((resolve, reject) => {
+    if (!url || typeof url !== 'string') {
+      resolve(null);
+      return;
+    }
+
+    // Crear directorio si no existe
+    const imagesDir = path.join(__dirname, 'public', 'images', 'apostolados');
+    if (!fs.existsSync(imagesDir)) {
+      fs.mkdirSync(imagesDir, { recursive: true });
+    }
+
+    const filePath = path.join(imagesDir, fileName);
+    const file = fs.createWriteStream(filePath);
+
+    https.get(url, (response) => {
+      if (response.statusCode !== 200) {
+        console.warn(`⚠️  Error descargando ${url}: ${response.statusCode}`);
+        resolve(null);
+        return;
+      }
+
+      response.pipe(file);
+
+      file.on('finish', () => {
+        file.close();
+        console.log(`✅ Imagen guardada: ${fileName}`);
+        resolve(`/images/apostolados/${fileName}`);
+      });
+    }).on('error', (err) => {
+      console.warn(`⚠️  Error descargando imagen: ${err.message}`);
+      fs.unlink(filePath, () => {}); // Eliminar archivo incompleto
+      resolve(null);
+    });
+  });
+}
+
 // Función para convertir URLs de Google Drive a formato web accesible
-function convertToThumbnail(url) {
-  return getBestImageUrl(url);
+async function convertToThumbnail(url, imageType = 'main', index = 0) {
+  if (!url || typeof url !== 'string') return url;
+
+  // Extraer ID del archivo de Google Drive
+  const patterns = [
+    /https:\/\/drive\.google\.com\/file\/d\/([^\/]+)\/view/,
+    /https:\/\/drive\.google\.com\/open\?id=([^&]+)/,
+    /https:\/\/lh3\.googleusercontent\.com\/d\/([^\/]+)/
+  ];
+
+  let fileId = null;
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1]) {
+      fileId = match[1];
+      break;
+    }
+  }
+
+  if (!fileId) return url;
+
+  // Crear nombre de archivo único
+  const extension = 'jpg'; // Asumimos JPG por defecto
+  const fileName = `${imageType}_${fileId}_${index}.${extension}`;
+
+  // Descargar y guardar la imagen localmente
+  try {
+    const localPath = await downloadAndSaveImage(`https://lh3.googleusercontent.com/d/${fileId}`, fileName);
+    return localPath || url; // Fallback a URL original si falla la descarga
+  } catch (error) {
+    console.warn(`⚠️  Error procesando imagen ${url}: ${error.message}`);
+    return url;
+  }
 }
 
 // Función para validar que la URL convertida sea accesible
@@ -268,12 +338,18 @@ export type ChapelInfo = typeof chapelInfo;
         });
       }
 
-      // Procesar fotos adicionales (convertidas a thumbnails)
+      // Procesar fotos adicionales (descargadas localmente)
       const activityImages = [];
       if (row['Fotos adicionales']) {
-        const additionalPhotos = row['Fotos adicionales'].split(',').map(url => url.trim());
-        const processedPhotos = additionalPhotos.filter(url => url.length > 0).map(convertToThumbnail);
-        activityImages.push(...processedPhotos);
+        const additionalPhotos = row['Fotos adicionales'].split(',').map(url => url.trim()).filter(url => url.length > 0);
+
+        // Procesar cada imagen adicional secuencialmente
+        for (let i = 0; i < additionalPhotos.length; i++) {
+          const processedImage = await convertToThumbnail(additionalPhotos[i], 'activity', i);
+          if (processedImage) {
+            activityImages.push(processedImage);
+          }
+        }
       }
 
       // Construir horario
@@ -300,12 +376,12 @@ export type ChapelInfo = typeof chapelInfo;
         activityImages: activityImages.length > 0 ? activityImages : undefined
       };
 
-      // Agregar imagen de portada si existe (convertida a thumbnail)
+      // Agregar imagen de portada si existe (descargada localmente)
       if (row['Foto de portada del apostolado']) {
-        esData.image = convertToThumbnail(row['Foto de portada del apostolado']);
+        esData.image = await convertToThumbnail(row['Foto de portada del apostolado'], 'main', 0);
       }
 
-      // Traducir automáticamente al inglés
+      // Traducir automáticamente al inglés (excepto las rutas de imágenes que son locales)
       console.log(`🔄 Traduciendo: ${esData.name}`);
       const enData = await translateObject({
         name: esData.name,
@@ -315,10 +391,12 @@ export type ChapelInfo = typeof chapelInfo;
         location: esData.location,
         activities: esData.activities,
         requirements: esData.requirements,
-        coordinadores: esData.coordinadores,
-        activityImages: esData.activityImages,
-        image: esData.image
+        coordinadores: esData.coordinadores
       });
+
+      // Mantener las rutas de imágenes locales sin traducir
+      enData.activityImages = esData.activityImages;
+      enData.image = esData.image;
 
       console.log(`✅ Traducción completada: ${enData.name}`);
 

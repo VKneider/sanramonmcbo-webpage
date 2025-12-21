@@ -3,6 +3,7 @@ export const apostoladosTranslations = {
     apostolados: {
       title: "Nuestros Apostolados",
       description: "Descubre los diferentes grupos y ministerios donde puedes crecer en la fe y servir a la comunidad siguiendo el carisma mercedario, organizados por nuestras capillas filiales.",
+      subtitle: "Apostolados y ministerios de",
       ageRange: "Rango de edades",
       schedule: "Horario de encuentros",
       location: "Lugar",
@@ -148,6 +149,7 @@ export const apostoladosTranslations = {
     apostolados: {
       title: "Our Apostolates",
       description: "Discover the different groups and ministries where you can grow in faith and serve the community following the Mercedarian charism, organized by our filial chapels.",
+      subtitle: "Apostolates and ministries of",
       ageRange: "Age range",
       schedule: "Meeting schedule",
       location: "Location",

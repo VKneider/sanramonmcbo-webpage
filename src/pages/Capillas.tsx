@@ -15,10 +15,11 @@ const Capillas = () => {
       <Navigation />
       <div className="pt-16">
         <CapillasHeader />
-        <ChapelFilter 
-          filtroCapilla={selectedChapel} 
+        <ChapelFilter
+          filtroCapilla={selectedChapel}
           setFiltroCapilla={setSelectedChapel}
           translationPrefix="capillas"
+          validChapels={validChapels}
         />
         <CapillaDetail capillaId={selectedChapel} />
       </div>
