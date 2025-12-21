@@ -4,6 +4,7 @@ import ApostolCard, { Apostolado, Coordinador } from '../ApostolCard';
 import ApostolModal from '../ApostolModal';
 import { chapelImages } from '@/data/static/chapels';
 import { temploApostoladoImages } from '@/data/static/apostolados';
+import { chapelApostolates } from '@/i18n/chapels';
 
 interface ApostoladadosDetailProps {
   capillaId: string;
@@ -50,23 +51,35 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
   // Obtener datos de la capilla seleccionada
   const getChapelData = () => {
     try {
-      const chapelData = t(`apostolados.chapelsList.${capillaId}`) as unknown as ChapelTranslationData;
-      
-      if (!chapelData || typeof chapelData !== 'object' || !chapelData.apostolates) {
+      let selectedChapelId = capillaId;
+
+      // Si la capilla seleccionada no tiene apostolados, usar temploSanRamon por defecto
+      if (!chapelApostolates[capillaId as keyof typeof chapelApostolates]) {
+        selectedChapelId = 'temploSanRamon';
+      }
+
+      const chapelData = chapelApostolates[selectedChapelId as keyof typeof chapelApostolates];
+
+      if (!chapelData) {
         return null;
       }
 
       const apostolates = Object.keys(chapelData.apostolates).map((apostolateKey) => {
-        const apostolateData = chapelData.apostolates[apostolateKey];
-        
-        // Asignar imagen específica para apostolados del templo San Ramón Nonato
-        let imageUrl = chapelImages[capillaId as keyof typeof chapelImages];
-        if (capillaId === 'temploSanRamon' && temploApostoladoImages[apostolateKey as keyof typeof temploApostoladoImages]) {
-          imageUrl = temploApostoladoImages[apostolateKey as keyof typeof temploApostoladoImages];
+        const apostolateData = chapelData.apostolates[apostolateKey][t('language') === 'es' ? 'es' : 'en'];
+
+        // Priorizar imagen del apostolado (del Excel), luego fallback a imágenes hardcodeadas
+        let imageUrl = apostolateData.image; // Imagen del formulario de apostolados
+
+        // Si no hay imagen del apostolado, usar imágenes hardcodeadas como fallback
+        if (!imageUrl) {
+          imageUrl = chapelImages[selectedChapelId as keyof typeof chapelImages];
+          if (selectedChapelId === 'temploSanRamon' && temploApostoladoImages[apostolateKey as keyof typeof temploApostoladoImages]) {
+            imageUrl = temploApostoladoImages[apostolateKey as keyof typeof temploApostoladoImages];
+          }
         }
-        
+
         return {
-          id: `${capillaId}-${apostolateKey}`,
+          id: `${selectedChapelId}-${apostolateKey}`,
           name: apostolateData.name,
           description: apostolateData.description,
           image: imageUrl,

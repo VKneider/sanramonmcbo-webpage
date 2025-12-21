@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/carousel";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Apostolado } from './ApostolCard';
+import ImageModal from './ImageModal';
 
 interface ApostolModalProps {
   apostolado: Apostolado | null;
@@ -25,7 +26,50 @@ interface ApostolModalProps {
 const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose }) => {
   const { t } = useLanguage();
 
+  // Estado para el modal de imagen ampliada
+  const [imageModalOpen, setImageModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [allImages, setAllImages] = useState<string[]>([]);
+
   if (!apostolado) return null;
+
+  // Función para abrir el modal de imagen ampliada
+  const openImageModal = (imageUrl: string, isMainImage = false) => {
+    // Crear array con todas las imágenes disponibles
+    const images: string[] = [];
+
+    // Agregar imagen principal si existe
+    if (apostolado.image) {
+      images.push(apostolado.image);
+    }
+
+    // Agregar imágenes adicionales si existen
+    if (apostolado.activityImages && apostolado.activityImages.length > 0) {
+      images.push(...apostolado.activityImages);
+    }
+
+    setAllImages(images);
+
+    // Encontrar el índice de la imagen clickeada
+    const clickedIndex = images.indexOf(imageUrl);
+    setCurrentImageIndex(clickedIndex >= 0 ? clickedIndex : 0);
+
+    setImageModalOpen(true);
+  };
+
+  // Función para navegar a la imagen anterior
+  const goToPreviousImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev > 0 ? prev - 1 : allImages.length - 1
+    );
+  };
+
+  // Función para navegar a la imagen siguiente
+  const goToNextImage = () => {
+    setCurrentImageIndex((prev) =>
+      prev < allImages.length - 1 ? prev + 1 : 0
+    );
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -33,13 +77,18 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full overflow-hidden">
           {/* Imagen principal */}
           {apostolado.image && (
-            <div className="relative h-full min-h-[300px] lg:min-h-full">
-              <img 
-                src={apostolado.image} 
+            <div className="relative h-full min-h-[300px] lg:min-h-full cursor-pointer group" onClick={() => openImageModal(apostolado.image!)}>
+              <img
+                src={apostolado.image}
                 alt={apostolado.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 rounded-full p-3">
+                  <span className="text-white text-2xl">🔍</span>
+                </div>
+              </div>
             </div>
           )}
           
@@ -160,12 +209,20 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
                   <CarouselContent>
                     {apostolado.activityImages.map((image, index) => (
                       <CarouselItem key={index}>
-                        <div className="relative w-full h-64 rounded-lg overflow-hidden">
-                          <img 
-                            src={image} 
+                        <div
+                          className="relative w-full h-64 rounded-lg overflow-hidden cursor-pointer group"
+                          onClick={() => openImageModal(image)}
+                        >
+                          <img
+                            src={image}
                             alt={`Actividad ${index + 1}`}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover transition-transform group-hover:scale-105"
                           />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 rounded-full p-3">
+                              <span className="text-white text-2xl">🔍</span>
+                            </div>
+                          </div>
                         </div>
                       </CarouselItem>
                     ))}
@@ -178,6 +235,19 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
           </div>
         </div>
       </DialogContent>
+
+      {/* Modal para imagen ampliada */}
+      <ImageModal
+        isOpen={imageModalOpen}
+        onClose={() => setImageModalOpen(false)}
+        src={allImages[currentImageIndex] || ''}
+        alt={`${apostolado.name} - Imagen ${currentImageIndex + 1}`}
+        caption={`${apostolado.name} - Actividad ${currentImageIndex + 1}`}
+        onPrevious={allImages.length > 1 ? goToPreviousImage : undefined}
+        onNext={allImages.length > 1 ? goToNextImage : undefined}
+        hasPrevious={allImages.length > 1}
+        hasNext={allImages.length > 1}
+      />
     </Dialog>
   );
 };

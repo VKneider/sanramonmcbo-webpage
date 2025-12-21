@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { 
+import { chapelApostolates } from '@/i18n/chapels';
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -14,24 +15,20 @@ interface ChapelFilterProps {
   translationPrefix: 'apostolados' | 'capillas';
 }
 
-const ChapelFilter: React.FC<ChapelFilterProps> = ({ 
-  filtroCapilla, 
+const ChapelFilter: React.FC<ChapelFilterProps> = ({
+  filtroCapilla,
   setFiltroCapilla,
   translationPrefix
 }) => {
   const { t } = useLanguage();
 
-  const allCapillas = [
-    { id: 'temploSanRamon', key: 'temploSanRamon' },
-    { id: 'divinaMisericordia', key: 'divinaMisericordia' },
-    { id: 'nuestraSeñoraMerced', key: 'nuestraSeñoraMerced' },
-    { id: 'sanPedroNolasco', key: 'sanPedroNolasco' },
-    { id: 'ermitaCarmen', key: 'ermitaCarmen' }
-  ];
+  // Obtener capillas que tienen apostolados disponibles
+  const availableChapels = Object.keys(chapelApostolates).map(chapelId => ({
+    id: chapelId,
+    key: chapelId
+  }));
 
-  const capillas = translationPrefix === 'capillas' 
-    ? allCapillas.filter(capilla => capilla.id !== 'temploSanRamon')
-    : allCapillas;
+  const capillas = availableChapels;
 
   return (
     <section className="py-8 bg-white">
