@@ -7,7 +7,7 @@ const QuienesSomos = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 bg-mercedario-cream">
+    <section id="quienes-somos" className="py-20 bg-mercedario-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-mercedario-brown mb-6">

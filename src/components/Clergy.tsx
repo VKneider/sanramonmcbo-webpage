@@ -45,11 +45,11 @@ const Clergy: React.FC = () => {
             >
               <CardContent className="p-8 text-center">
                 <div className="mb-6">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-mercedario-gold/10 border-4 border-mercedario-gold/20 overflow-hidden">
+                  <div className="w-48 h-48 mx-auto rounded-full bg-mercedario-gold/10 border-4 border-mercedario-gold/20 overflow-hidden">
                     <img
                       src={priest.photo}
                       alt={priest.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center scale-125"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = "/placeholder.svg";

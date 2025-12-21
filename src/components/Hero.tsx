@@ -33,15 +33,20 @@ const Hero = () => {
         </p>
         
         <div className="flex justify-center">
-          <Button size="lg" className="bg-mercedario-white text-mercedario-red hover:bg-mercedario-cream font-semibold px-8 py-3">
+          <Button
+            size="lg"
+            className="bg-mercedario-white text-mercedario-red hover:bg-mercedario-cream font-semibold px-8 py-3"
+            onClick={() => {
+              const quienesSomosSection = document.getElementById('quienes-somos');
+              if (quienesSomosSection) {
+                quienesSomosSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             {t('hero.missionButton')}
           </Button>
         </div>
         
-        <div className="mt-12 text-mercedario-white/80 text-sm">
-          <p className="italic">"{t('hero.motto')}"</p>
-          <p className="text-xs mt-1">- {t('hero.mottoSource')}</p>
-        </div>
       </div>
       
       {/* Decorative elements */}

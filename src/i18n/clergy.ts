@@ -10,7 +10,7 @@ export const clergyTranslations = {
           name: "P. Ponç Capell",
           title: "Párroco",
           period: "2023 - Presente",
-          photo: "/placeholder.svg",
+          photo: "/images/parroco.png",
           visible: "true"
         },
         vicario: {
@@ -31,10 +31,10 @@ export const clergyTranslations = {
       vicar: "Parochial Vicar",
       priests: {
         parroco: {
-          name: "Fr. [Parish Priest Name]",
-          title: "Parish Priest", 
+          name: "Fr. Ponç Capell",
+          title: "Parish Priest",
           period: "2023 - Present",
-          photo: "/placeholder.svg",
+          photo: "/images/parroco.png",
           visible: "true"
         },
         vicario: {

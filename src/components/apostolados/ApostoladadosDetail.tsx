@@ -32,7 +32,7 @@ interface ChapelTranslationData {
 }
 
 const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [selectedApostolado, setSelectedApostolado] = useState<Apostolado | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -65,7 +65,7 @@ const ApostoladadosDetail: React.FC<ApostoladadosDetailProps> = ({ capillaId }) 
       }
 
       const apostolates = Object.keys(chapelData.apostolates).map((apostolateKey) => {
-        const apostolateData = chapelData.apostolates[apostolateKey][t('language') === 'es' ? 'es' : 'en'];
+        const apostolateData = chapelData.apostolates[apostolateKey][language];
 
         // Priorizar imagen del apostolado (del Excel), luego fallback a imágenes hardcodeadas
         let imageUrl = apostolateData.image; // Imagen del formulario de apostolados
