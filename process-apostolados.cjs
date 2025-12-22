@@ -39,6 +39,35 @@ function slugifyApostolateName(name) {
     .substring(0, 50);
 }
 
+// Función auxiliar para obtener valores seguros del Excel
+function getSafeString(value) {
+  if (value == null || value === '') return undefined;
+  // Convertir números a string primero
+  const strValue = typeof value === 'number' ? value.toString() : String(value);
+  // Verificar que sea una cadena no vacía después del trim
+  const trimmed = strValue.trim();
+  return trimmed.length > 0 ? trimmed : undefined;
+}
+
+// Función para convertir nombre de apostolado a slug válido para archivo
+function slugifyApostolateName(name) {
+  return name
+    .toLowerCase()
+    // Reemplazar caracteres especiales
+    .replace(/á/g, 'a')
+    .replace(/é/g, 'e')
+    .replace(/í/g, 'i')
+    .replace(/ó/g, 'o')
+    .replace(/ú/g, 'u')
+    .replace(/ñ/g, 'n')
+    // Reemplazar espacios y caracteres especiales con guiones
+    .replace(/[^a-z0-9]+/g, '-')
+    // Eliminar guiones al inicio y final
+    .replace(/^-+|-+$/g, '')
+    // Limitar longitud para evitar nombres demasiado largos
+    .substring(0, 50);
+}
+
 // Función para convertir URLs de Google Drive a imagen completa
 // Función para descargar y guardar imágenes localmente
 async function downloadAndSaveImage(url, fileName) {
@@ -199,25 +228,45 @@ function convertCSVToApostolateData(csvData) {
     // Crear clave única para el apostolado
     const apostolateKey = `apostolate_${index + 1}`;
 
-    // Procesar actividades (dividir por líneas si contienen guiones)
+    // Procesar actividades manteniendo el formato original
     const activitiesText = row['Descripción de actividades que se realizan dentro del mismo'] || '';
-    const activities = activitiesText
+    const lines = activitiesText
       .split('\n')
-      .map(activity => activity.replace(/^- /, '').trim())
-      .filter(activity => activity.length > 0);
+      .map(line => line.trim())
+      .filter(line => line.length > 0);
+
+    // Para listas (con guiones o viñetas), mantener cada elemento separado
+    // Para párrafos, agrupar TODAS las líneas en un solo párrafo continuo
+    const activities = [];
+
+    // Detectar si es formato de lista: TODAS las líneas deben empezar con elementos de lista
+    const isListFormat = lines.length > 0 && lines.every(line =>
+      line.startsWith('-') || line.startsWith('•') || /^\d+\./.test(line)
+    );
+
+    if (isListFormat) {
+      // Si es formato de lista, mantener cada línea como elemento separado
+      activities.push(...lines);
+    } else {
+      // Si es formato de párrafos, combinar todas las líneas en un solo párrafo
+      const fullText = lines.join(' ');
+      activities.push(fullText);
+    }
 
     // Crear coordinadores
     const coordinadores = [];
-    if (row['Nombre del Coordinador 1'] && row['Nombre del Coordinador 1'].trim()) {
+    const nombreCoordinador1 = getSafeString(row['Nombre del Coordinador 1']);
+    if (nombreCoordinador1) {
       coordinadores.push({
-        nombre: row['Nombre del Coordinador 1'].trim(),
-        telefono: row['Teléfono del Coordinador 1'] ? row['Teléfono del Coordinador 1'].trim() : undefined
+        nombre: nombreCoordinador1,
+        telefono: getSafeString(row['Teléfono del Coordinador 1'])
       });
     }
-    if (row['Nombre del Coordinador 2'] && row['Nombre del Coordinador 2'].trim()) {
+    const nombreCoordinador2 = getSafeString(row['Nombre del Coordinador 2']);
+    if (nombreCoordinador2) {
       coordinadores.push({
-        nombre: row['Nombre del Coordinador 2'].trim(),
-        telefono: row['Teléfono del Coordinador 2'] ? row['Teléfono del Coordinador 2'].trim() : undefined
+        nombre: nombreCoordinador2,
+        telefono: getSafeString(row['Teléfono del Coordinador 2\n']) // La columna tiene un salto de línea
       });
     }
 
@@ -316,25 +365,45 @@ export type ChapelInfo = typeof chapelInfo;
       const apostolateName = row['Nombre del Apostolado'] || `apostolate_${index + 1}`;
       const fileName = `${slugifyApostolateName(apostolateName)}.ts`;
 
-      // Procesar actividades
+      // Procesar actividades manteniendo el formato original
       const activitiesText = row['Descripción de actividades que se realizan dentro del mismo'] || '';
-      const activities = activitiesText
+      const lines = activitiesText
         .split('\n')
-        .map(activity => activity.replace(/^- /, '').trim())
-        .filter(activity => activity.length > 0);
+        .map(line => line.trim())
+        .filter(line => line.length > 0);
+
+      // Para listas (con guiones o viñetas), mantener cada elemento separado
+      // Para párrafos, agrupar TODAS las líneas en un solo párrafo continuo
+      const activities = [];
+
+      // Detectar si es formato de lista: TODAS las líneas deben empezar con elementos de lista
+      const isListFormat = lines.length > 0 && lines.every(line =>
+        line.startsWith('-') || line.startsWith('•') || /^\d+\./.test(line)
+      );
+
+      if (isListFormat) {
+        // Si es formato de lista, mantener cada línea como elemento separado
+        activities.push(...lines);
+      } else {
+        // Si es formato de párrafos, combinar todas las líneas en un solo párrafo
+        const fullText = lines.join(' ');
+        activities.push(fullText);
+      }
 
       // Crear coordinadores
       const coordinadores = [];
-      if (row['Nombre del Coordinador 1'] && row['Nombre del Coordinador 1'].trim()) {
+      const nombreCoordinador1 = getSafeString(row['Nombre del Coordinador 1']);
+      if (nombreCoordinador1) {
         coordinadores.push({
-          nombre: row['Nombre del Coordinador 1'].trim(),
-          telefono: row['Teléfono del Coordinador 1'] ? row['Teléfono del Coordinador 1'].trim() : undefined
+          nombre: nombreCoordinador1,
+          telefono: getSafeString(row['Teléfono del Coordinador 1'])
         });
       }
-      if (row['Nombre del Coordinador 2'] && row['Nombre del Coordinador 2'].trim()) {
+      const nombreCoordinador2 = getSafeString(row['Nombre del Coordinador 2']);
+      if (nombreCoordinador2) {
         coordinadores.push({
-          nombre: row['Nombre del Coordinador 2'].trim(),
-          telefono: row['Teléfono del Coordinador 2'] ? row['Teléfono del Coordinador 2'].trim() : undefined
+          nombre: nombreCoordinador2,
+          telefono: getSafeString(row['Teléfono del Coordinador 2\n']) // La columna tiene un salto de línea
         });
       }
 

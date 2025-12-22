@@ -34,6 +34,12 @@ interface ApostolCardProps {
 const ApostolCard: React.FC<ApostolCardProps> = ({ apostolado, onMoreInfo }) => {
   const { t } = useLanguage();
 
+  // Función para truncar la descripción a un máximo de caracteres
+  const truncateDescription = (text: string, maxLength: number = 150) => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength).trim() + '...';
+  };
+
   return (
     <Card className="h-full flex flex-col hover:shadow-md transition-shadow overflow-hidden">
       {apostolado.image && (
@@ -48,7 +54,7 @@ const ApostolCard: React.FC<ApostolCardProps> = ({ apostolado, onMoreInfo }) => 
       <CardHeader>
         <CardTitle className="text-lg text-red-800">{apostolado.name}</CardTitle>
         <CardDescription className="text-gray-600">
-          {apostolado.description}
+          {truncateDescription(apostolado.description)}
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow flex flex-col justify-between">

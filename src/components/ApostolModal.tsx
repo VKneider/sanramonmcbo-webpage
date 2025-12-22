@@ -31,6 +31,22 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [allImages, setAllImages] = useState<string[]>([]);
 
+  // Función para detectar si el contenido está en formato de lista
+  const isListFormat = (activities: string[]) => {
+    return activities.some(activity =>
+      activity.trim().startsWith('-') ||
+      activity.trim().startsWith('•') ||
+      /^\d+\./.test(activity.trim()) // Detecta numeración como "1.", "2.", etc.
+    );
+  };
+
+  // Función para limpiar elementos de lista
+  const cleanListItem = (item: string) => {
+    return item.trim()
+      .replace(/^[-•]\s*/, '') // Remover guiones y viñetas
+      .replace(/^\d+\.\s*/, ''); // Remover numeración
+  };
+
   if (!apostolado) return null;
 
   // Función para abrir el modal de imagen ampliada
@@ -74,21 +90,16 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="w-[90vw] h-[85vh] max-w-none p-0 overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-full overflow-hidden">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 h-full overflow-y-auto lg:overflow-hidden">
           {/* Imagen principal */}
           {apostolado.image && (
-            <div className="relative h-full min-h-[300px] lg:min-h-full cursor-pointer group" onClick={() => openImageModal(apostolado.image!)}>
+            <div className="relative h-64 lg:h-full min-h-[300px] lg:min-h-full">
               <img
                 src={apostolado.image}
                 alt={apostolado.name}
-                className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 rounded-full p-3">
-                  <span className="text-white text-2xl">🔍</span>
-                </div>
-              </div>
             </div>
           )}
           
@@ -186,14 +197,33 @@ const ApostolModal: React.FC<ApostolModalProps> = ({ apostolado, isOpen, onClose
                     <span className="text-lg">✨</span>
                     {t('apostolados.activities')}
                   </h4>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {apostolado.activities.map((activity, index) => (
-                      <li key={index} className="flex items-start gap-2 text-foreground/80">
-                        <span className="text-mercedario-red mt-1">•</span>
-                        <span className="break-words">{activity}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="text-foreground/80">
+                    {isListFormat(apostolado.activities) ? (
+                      // Renderizar como lista con viñetas
+                      <ul className="space-y-2">
+                        {apostolado.activities.map((activity, index) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <span className="text-mercedario-red mt-1 flex-shrink-0">•</span>
+                            <span className="break-words leading-relaxed">{cleanListItem(activity)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      // Renderizar como párrafos con separadores
+                      <div className="space-y-4">
+                        {apostolado.activities.map((activity, index) => (
+                          <div key={index}>
+                            <p className="break-words leading-relaxed mb-3">
+                              {activity}
+                            </p>
+                            {index < apostolado.activities.length - 1 && (
+                              <hr className="border-mercedario-red/20 my-3" />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
