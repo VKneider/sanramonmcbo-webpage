@@ -1,49 +1,59 @@
 export const apostolateData = {
   "es": {
     "name": "Jóvenes de Acción Católica Mercedaria",
-    "description": "dasdasd",
+    "description": "Pastoral Juvenil Parroquial adherida a los estatutos de la Acción Católica (asociación de laicos para laicos) y siguiendo el carisma Mercedario (carisma de la Parroquia)",
     "ageRange": "Jóvenes",
-    "schedule": "Viernes dsa",
+    "schedule": "Viernes Viernes de 5 PM a 8 PM",
     "location": "San Ramón Nonato",
     "activities": [
-      "dasdasd"
+      "- Encuentros Formativos: Espacios de formación para los jóvenes de la parroquia (pertenecientes al grupo e invitados)",
+      "- Liturgia: Encargados de la liturgia de la Eucaristía de los Viernes a las 5:00 PM (previa a los encuentros)",
+      "- Acción Social: Por los menos dos o tres acciones sociales trimestrales en los barrios pertenecientes a la comunidad",
+      "- Experiencias Espirituales: Convivencias y retiros espirituales abiertos para jóvenes de la parroquia",
+      "- JAC-MEM: Encuentros combinados con Pastoral Familiar como método de preparación para la generación de relevo"
     ],
     "coordinadores": [
       {
-        "nombre": "vvv",
-        "telefono": "vvv"
+        "nombre": "Victor Kneider",
+        "telefono": "04246501227"
       },
       {
-        "nombre": "vvv"
+        "nombre": "Maria Andrea Espina",
+        "telefono": "04146019600"
       }
     ],
     "activityImages": [
-      "https://lh3.googleusercontent.com/d/1N4mlmj4LgjmimC86WB8G_p6tQOqUBr5M"
+      "/images/apostolados/activity_1LLWyeQkEfAM1vR32udBDK4_ija6gUjSg_0.jpg"
     ],
-    "image": "https://lh3.googleusercontent.com/d/1Dwz9rhy2bTf9iEzi5LzVaXotLfDSvK93"
+    "image": "/images/apostolados/main_1Tw8D3hctSFlOJIcZ7JQLBNhUrNlGPpea_0.jpg"
   },
   "en": {
-    "name": "Jóvenes de Acción Católica Mercedaria",
-    "description": "dasdasd",
-    "ageRange": "Jóvenes",
-    "schedule": "Viernes dsa",
-    "location": "San Ramón Nonato",
+    "name": "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 43 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
+    "description": "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 43 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
+    "ageRange": "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 43 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
+    "schedule": "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 43 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
+    "location": "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 43 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
     "activities": [
-      "dasdasd"
+      "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 43 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
+      "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 42 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
+      "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 42 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
+      "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 42 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
+      "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 42 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE"
     ],
     "coordinadores": [
       {
-        "nombre": "vvv",
-        "telefono": "vvv"
+        "nombre": "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 42 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
+        "telefono": "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 42 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE"
       },
       {
-        "nombre": "vvv"
+        "nombre": "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 42 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE",
+        "telefono": "MYMEMORY WARNING: YOU USED ALL AVAILABLE FREE TRANSLATIONS FOR TODAY. NEXT AVAILABLE IN  03 HOURS 30 MINUTES 41 SECONDS VISIT HTTPS://MYMEMORY.TRANSLATED.NET/DOC/USAGELIMITS.PHP TO TRANSLATE MORE"
       }
     ],
     "activityImages": [
-      "https://lh3.googleusercontent.com/d/1N4mlmj4LgjmimC86WB8G_p6tQOqUBr5M"
+      "/images/apostolados/activity_1LLWyeQkEfAM1vR32udBDK4_ija6gUjSg_0.jpg"
     ],
-    "image": "https://lh3.googleusercontent.com/d/1Dwz9rhy2bTf9iEzi5LzVaXotLfDSvK93"
+    "image": "/images/apostolados/main_1Tw8D3hctSFlOJIcZ7JQLBNhUrNlGPpea_0.jpg"
   }
 };
 
